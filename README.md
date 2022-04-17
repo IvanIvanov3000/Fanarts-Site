@@ -1,5 +1,5 @@
-# Fanarts-Site
-This is a simple site that shows different fanarts. You can publish a fanart, see other fanarts and much more...
+# Fan-arts-Site
+This is a simple site that shows different fan arts. You can publish a fan art, see other fan arts and much more...
 
 **Unaauthorized users**
 
@@ -15,5 +15,5 @@ Users who are unauthorized can access:
  Users who are unauthorized can access::
   -Catalog page
   -Details pages
-  -Create fanart
+  -Create a fan art page
   -Logout functionallity
