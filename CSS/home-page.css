@@ -1,0 +1,33 @@
+/* header */
+
+header{
+    background-color: #9dcead;
+}
+header nav{
+    display: flex;
+    justify-content: space-around;
+}
+header img{
+   height: 100px
+}
+
+header ul{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+header a{
+    font-size: 30px;
+
+}
+.registerLinks{
+    color: #d75c1d;
+}
+.catalogLink{
+    color: #20aad0;
+}
+.aboutLink{
+    color: #b7a75b;
+}
