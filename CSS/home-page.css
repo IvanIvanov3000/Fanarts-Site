@@ -101,7 +101,11 @@ main .latestArticlesh2 {
     gap: 25px;
     background-color: var(--primary-grey);
     padding: 20px;
-    border-radius: 10px;
+
+    border-top: 3px solid var(--primary-yellow);
+    border-left: 3px solid var(--primary-yellow);
+    border-radius: 25px;
+    margin: 5px;
 
     display: flex;
     flex-wrap: wrap;
@@ -154,6 +158,11 @@ section#last-fan-arts article {
     width: 31%;
     background-color: var(--primary-grey);
     position: relative;
+    border-top: 3px solid var(--primary-yellow);
+    border-left: 3px solid var(--primary-yellow);
+    border-radius: 25px;
+    margin: 5px;
+    overflow: hidden;
 
 }
 
@@ -169,8 +178,8 @@ section#last-fan-arts article div.tag {
     border: 1px solid black;
     border-radius: 5px;
     position: absolute;
-    top: 5px;
-    right:  5px;
+    top: 6px;
+    right:  13px;
 
     background-color: var(--primary-grey);
     font-size: 19px;
