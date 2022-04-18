@@ -63,7 +63,7 @@ section#login #login-text label {
 }
 section#login #login-text button {
     width: 100%;
-    font-size: 16px;
+    font-size: 17px;
     border-radius: 25px;
     margin-top: 10px;
     color: var(--primary-orange);
