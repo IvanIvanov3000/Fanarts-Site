@@ -239,11 +239,14 @@ footer {
 
     display: flex;
     justify-content: space-between;
+
+    position:style;
+    
+    bottom: 0;
 }
 
 footer nav {
     display: flex;
-
 }
 
 footer nav.internalLinks {
@@ -253,7 +256,6 @@ footer nav.internalLinks {
 footer nav.externalLinks {
     width: 20%;
     flex-wrap: wrap;
-
 }
 
 
@@ -271,15 +273,11 @@ footer nav.externalLinks ul {
     flex-direction: column;
     align-items: right;
     justify-content: space-around;
-    
 }
 footer nav.externalLinks a{
     font-size: 20px
 }
 
-
-
 footer a {
     font-size: 25px;
-
 }
