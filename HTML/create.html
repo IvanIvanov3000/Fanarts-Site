@@ -32,26 +32,42 @@
             <div id="create-hero"></div>
 
             <div id="create-text">
-                <img src="../Images" alt="">
+                <img src="../Images/catalog-toparts-page/water-logo-grey.png" alt="">
                 <div class="wrapper">
-                    <h2>Register page</h2>
+                    <h2>Create fan art page</h2>
+
                     <form method="post">
-                        <label for="ftitle">Title:</label><br>
-                        <input type="text" id="ftitle" name="ftitle" placeholder="The vest drawing everr!"><br>
+                        <div>
 
-                        <label for="ftag">Tag:</label><br>
-                        <select id="ftag" name="ftag">
-                            <option value="Marvel">Volvo</option>
-                            <option value="DC">Saab</option>
-                            <option value="Harry Poter">Fiat</option>
-                            <option value="Star wars">Audi</option>
-                        </select>
+                            <label for="ftitle">Title:</label>
+                            <input type="text" id="ftitle" name="ftitle" placeholder="The best drawing everr!">
+                        </div>
+                        <div>
 
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="password" name="password" placeholder="******"><br>
+                            <label for="image">Image link: </label>
+                            <input type="text" id="image" name="image" placeholder="http://google/image">
+                        </div>
+                        <div>
 
-                        <label for="rePassword">Repeat password:</label><br>
-                        <input type="password" id="rePassword" name="rePassword" placeholder="******"><br>
+                            <label for="ftag">Tag:</label>
+
+                            <select id="ftag" name="ftag">
+                                <option value="Other">Other</option>
+                                <option value="Marvel">Marvel</option>
+                                <option value="DC">DC</option>
+                                <option value="Harry_Poter">Harry Poter</option>
+                                <option value="Star_wars">Star Wars</option>
+                                <option value="Video_game">Video game</option>
+                            </select>
+                        </div>
+                        <div>
+
+                            <label for="desc">Description: </label>
+                            <textarea name="desc" id="desc"
+                                placeholder="This is where the description of the fan art must be at. It must be at least 50 characters long.">
+                        </textarea>
+                        </div>
+
                         <button type="submit">Submit</button>
                     </form>
                 </div>
