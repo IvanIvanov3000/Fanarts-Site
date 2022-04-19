@@ -67,6 +67,8 @@ section#login #login-text button {
     border-radius: 25px;
     margin-top: 10px;
     color: var(--primary-orange);
+    cursor: pointer;
+
 }
 
 
