@@ -39,12 +39,12 @@ section#cards {
     
 }
 
-section#cards article {
+section#catalog section#cards article {
     width: 31%;
     background-color: var(--primary-grey);
     position: relative;
-    border-top: 3px solid var(--primary-yellow);
-    border-left: 3px solid var(--primary-yellow);
+    border-top: 3px solid var(--primary-blue);
+    border-left: 3px solid var(--primary-blue);
     border-radius: 25px;
     margin: 15px 5px;
     overflow: hidden;

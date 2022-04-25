@@ -1,4 +1,4 @@
-section#catalog {
+section#top-fan-arts {
     background-image: url("../Images/catalog-toparts-page/background2.png");
     background-color: var(--primary-grey);
     width: 100%;
@@ -8,7 +8,7 @@ section#catalog {
 
 }
 
-section#catalog div.title {
+section#top-fan-arts div.title {
     position: absolute;
     top: 0;
     right:  706.5px;
@@ -17,7 +17,7 @@ section#catalog div.title {
     border: 3px solid var(--primary-blue);
 }
 
-section#catalog h2{
+section#top-fan-arts h2{
     font-size: 60px;
     margin: 5px 0;
     color: var(--primary-blue);
@@ -27,7 +27,7 @@ section#catalog h2{
 
 /* cards */
 
-section#cards {
+section#top-fan-arts section#cards {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -39,12 +39,12 @@ section#cards {
     
 }
 
-section#cards article {
+section#top-fan-arts section#cards article {
     width: 31%;
     background-color: var(--primary-grey);
     position: relative;
-    border-top: 3px solid var(--primary-yellow);
-    border-left: 3px solid var(--primary-yellow);
+    border-top: 3px solid var(--primary-blue);
+    border-left: 3px solid var(--primary-blue);
     border-radius: 25px;
     margin: 15px 5px;
     overflow: hidden;
