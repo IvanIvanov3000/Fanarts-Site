@@ -63,6 +63,10 @@ section#details #details-text div.wrapper div p {
     width: 19%;
     text-align: right;
 }
+section#details #details-text div.wrapper div span {
+    width: 81%;
+    text-align: left;
+}
 section#details #details-text div.wrapper div p, section#details #details-text div.wrapper div span{
     font-size: 28px;
     color: var(--primary-blue);
