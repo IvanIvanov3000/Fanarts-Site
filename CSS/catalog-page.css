@@ -8,21 +8,26 @@ section#catalog {
 
 }
 
+section#catalog div.catalog-bar {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: var(--primary-grey);
+    border-bottom: 5px solid var(--primary-blue);
+    border-top: 5px solid var(--primary-blue);
+}
+
 section#catalog div.title {
-    position: absolute;
-    top: 0;
-    right:  706.5px;
+    margin: 20px auto;
     width: 300px;
-    height: 78px;
     border: 3px solid var(--primary-blue);
 }
 
-section#catalog h2{
+section#catalog h2 {
     font-size: 60px;
     margin: 5px 0;
     color: var(--primary-blue);
     text-align: center;
-   
+
 }
 
 /* cards */
@@ -31,12 +36,9 @@ section#cards {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-   
+
     justify-content: space-between;
     align-items: top;
-    border-top: 90px solid var(--primary-grey);
-    padding-top: 20px;
-    
 }
 
 section#catalog section#cards article {
@@ -64,11 +66,11 @@ section#cards article div.tag {
     border-radius: 5px;
     position: absolute;
     top: 6px;
-    right:  13px;
+    right: 13px;
 
     background-color: var(--primary-grey);
     font-size: 19px;
-   
+
 }
 
 
