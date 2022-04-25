@@ -34,8 +34,11 @@ header {
 }
 
 header nav {
+    width: 88%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 10%;
 }
 
 header img {
@@ -43,9 +46,9 @@ header img {
 }
 
 header ul {
-    width: 58%;
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     gap: 40px;
     align-items: center;
 }
