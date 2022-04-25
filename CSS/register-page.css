@@ -69,7 +69,9 @@ section#register #register-text button {
     color: var(--primary-orange);
     cursor: pointer;
 }
-
+section#register #register-text button:hover {
+    background-color: grey;
+}
 
 
 section#register #register-text h2 {

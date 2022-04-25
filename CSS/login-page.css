@@ -70,6 +70,9 @@ section#login #login-text button {
     cursor: pointer;
 
 }
+section#login #login-text button:hover {
+    background-color: grey;
+}
 
 
 section#login #login-text h2 {
