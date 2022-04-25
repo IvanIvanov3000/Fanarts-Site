@@ -61,7 +61,22 @@ section#create #create-text div.wrapper form {
 section#create #create-text div.wrapper form div {
     display: flex;
     gap: 4%;
-    
+}
+
+section#create #create-text div.wrapper form div.wrapper {
+    display: flex;
+    width: 62%;
+}
+
+section#create #create-text div.wrapper form div.wrapper span {
+    width: 50%;
+    vertical-align: middle;
+    align-self: center;
+}
+
+section#create #create-text div.wrapper form div.wrapper input {
+    width: 18px;
+    height: 18px;
 }
 
 section#create #create-text input {
@@ -87,6 +102,7 @@ section#create #create-text select {
     border-radius: 25px;
 
 }
+
 section#create #create-text textarea {
     width: 64%;
     height: 150px;
@@ -126,6 +142,7 @@ section#create #create-text button {
     color: var(--primary-blue);
     cursor: pointer;
 }
+
 section#create #create-text button:hover {
     background-color: grey;
 }
