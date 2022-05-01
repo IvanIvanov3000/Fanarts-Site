@@ -57,7 +57,7 @@ section#details #details-text h2 {
 section#details #details-text div.wrapper div {
     display: flex;
     gap: 12px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 section#details #details-text div.wrapper div p {
     width: 19%;
