@@ -6,8 +6,8 @@
     <div class="wrapper">
         <h3>{{fanArt.title}}</h3>
         <p class="description">
-            {{fanArt.description}}
+            <!-- {{fanArt.description}} -->
+            {{ (fanArt.description.length>150)? (fanArt.description | slice:0:150)+'..':(fanArt.description) }}
         </p>
         <button class="toDetailsPage"><a href="">Details</a></button>
     </div>
-</article>
