@@ -1,21 +1,22 @@
 article {
-    width: 31%;
+    width: 100%;
     background-color: var(--primary-grey);
     position: relative;
-    border-top: 3px solid var(--primary-yellow);
-    border-left: 3px solid var(--primary-yellow);
+    border-top: 3px solid var(--primary-grey);
+    border-left: 3px solid var(--primary-grey);
     border-radius: 25px;
-    margin: 5px;
     overflow: hidden;
 
 }
-:host-context(.yellow){
+
+.yellow {
     border-color: var(--primary-yellow);
 }
-:host-context(.blue){
+
+.blue {
     border-color: var(--primary-blue);
 }
-:host-context(.orange){
+.orange {
     border-color: var(--primary-orange);
 }
 
@@ -23,6 +24,7 @@ article img {
     width: 100%;
     object-fit: cover;
     height: 300px;
+   
 }
 
 article div.tag {
@@ -32,11 +34,11 @@ article div.tag {
     border-radius: 5px;
     position: absolute;
     top: 6px;
-    right:  13px;
+    right: 13px;
 
     background-color: var(--primary-grey);
-    font-size: 19px;
-   
+    font-size: 24px;
+
 }
 
 
@@ -52,14 +54,14 @@ article .wrapper {
 }
 
 article .wrapper h3 {
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
     color: var(--primary-orange)
 }
 
 article .wrapper p {
     margin-top: 15px;
-    font-size: 16px;
+    font-size: 21px;
     text-align: justify;
     color: var(--primary-yellow)
 }
