@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { FanArt } from '../../fanArts'
 
 @Component({
   selector: 'app-fan-art',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FanArtComponent implements OnInit {
 
+  @Input() fanArt!: FanArt;
+  @Input() theme!: string;
+  
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
