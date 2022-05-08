@@ -1,14 +1,14 @@
 footer {
     width: 90%;
     height: 100px;
-    margin: 20px 5%;
+    margin: 0 5%;
+    margin-top: 20px;
     background-color: var(--primary-grey);
 
     display: flex;
     justify-content: space-between;
 
-    position: absolute;
-    bottom: 0;
+ 
 }
 
 footer nav {
