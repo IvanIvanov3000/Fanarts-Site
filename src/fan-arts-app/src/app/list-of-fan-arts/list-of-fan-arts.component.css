@@ -1,10 +1,16 @@
 section{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: calc(4% / 3);
     align-items: top;
-    border-top: 10px solid var(--primary-grey);
     padding: 15px 0px;
     border-bottom: 10px solid var(--primary-grey);
-    
+}
+
+app-fan-art{
+    width: 24%;
+    margin-top: calc(4%/3);
+    box-sizing: border-box;
+   
 }
