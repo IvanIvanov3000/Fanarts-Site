@@ -12,6 +12,9 @@ import { LoginPageComponent } from './auth-pages/login-page/login-page.component
 import { HomeHeroComponent } from './home-page/home-hero/home-hero.component';
 import { ListOfFanArtsComponent } from './list-of-fan-arts/list-of-fan-arts.component';
 import { FanArtComponent } from './list-of-fan-arts/fan-art/fan-art.component';
+import { RegisterPageComponent } from './auth-pages/register-page/register-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { FanArtComponent } from './list-of-fan-arts/fan-art/fan-art.component';
     LoginPageComponent,
     HomeHeroComponent,
     ListOfFanArtsComponent,
-    FanArtComponent
+    FanArtComponent,
+    RegisterPageComponent,
+    AboutPageComponent,
+    CatalogPageComponent
   ],
   imports: [
     BrowserModule,
