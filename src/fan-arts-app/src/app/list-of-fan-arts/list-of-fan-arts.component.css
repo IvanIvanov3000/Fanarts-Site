@@ -1,0 +1,10 @@
+section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    border-top: 10px solid var(--primary-grey);
+    padding: 15px 0px;
+    border-bottom: 10px solid var(--primary-grey);
+    
+}
