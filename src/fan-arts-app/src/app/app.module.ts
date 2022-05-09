@@ -16,6 +16,7 @@ import { RegisterPageComponent } from './auth-pages/register-page/register-page.
 import { AboutPageComponent } from './about-page/about-page.component';
 import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
+import { DetailsEditPageComponent } from './details-edit-page/details-edit-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CreatePageComponent } from './create-page/create-page.component';
     RegisterPageComponent,
     AboutPageComponent,
     CatalogPageComponent,
-    CreatePageComponent
+    CreatePageComponent,
+    DetailsEditPageComponent
   ],
   imports: [
     BrowserModule,

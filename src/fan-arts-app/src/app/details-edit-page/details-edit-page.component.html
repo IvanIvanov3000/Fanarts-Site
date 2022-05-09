@@ -1,0 +1,63 @@
+<section id="details-edit">
+    <div id="details-edit-hero"></div>
+
+    <div id="details-edit-text">
+        <img src="./assets/Images/catalog-toparts-page/water-logo-grey.png" alt="">
+        <div class="wrapper">
+            <h2>Edit</h2>
+
+            <form method="post">
+                <div>
+
+                    <label for="ftitle">Title:</label>
+                    <input type="text" id="ftitle" name="ftitle" placeholder="The best drawing everr!">
+                </div>
+                <div>
+
+                    <label for="image">Image link: </label>
+                    <input type="text" id="image" name="image" placeholder="http://google/image">
+                </div>
+                <div>
+
+                    <label for="image">Public: </label>
+                    <div class="wrapper">
+                        <span>
+                            <input type="radio" id="public" name="interest" value="true">
+                            <label for="public">Public</label>
+                        </span>
+                        <span>
+
+                            <input type="radio" id="private" name="interest" value='false'>
+                            <label for="priate">Private</label>
+                        </span>
+
+                    </div>
+
+                </div>
+                <div>
+
+                    <label for="ftag">Tag:</label>
+
+                    <select id="ftag" name="ftag">
+                        <option value="Other">Other</option>
+                        <option value="Marvel">Marvel</option>
+                        <option value="DC">DC</option>
+                        <option value="Harry_Poter">Harry Poter</option>
+                        <option value="Star_wars">Star Wars</option>
+                        <option value="Video_game">Video game</option>
+                    </select>
+                </div>
+                <div>
+
+                    <label for="desc">Description: </label>
+                    <textarea name="desc" id="desc"
+                        placeholder="This is where the description of the fan art must be at. It must be at least 50 characters long.">
+                </textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</section>

@@ -8,7 +8,7 @@ import {LoginPageComponent}   from './auth-pages/login-page/login-page.component
 import {RegisterPageComponent}   from './auth-pages/register-page/register-page.component';
 
 import {CreatePageComponent}   from './create-page/create-page.component'
-
+import {DetailsEditPageComponent}   from  './details-edit-page/details-edit-page.component'
  
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'about', component: AboutPageComponent},
   {path: 'catalog', component: CatalogPageComponent},
   {path: 'create', component: CreatePageComponent},
+  {path: 'details/edit', component: DetailsEditPageComponent},
 
 ];
 
