@@ -15,6 +15,7 @@ import { FanArtComponent } from './list-of-fan-arts/fan-art/fan-art.component';
 import { RegisterPageComponent } from './auth-pages/register-page/register-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { CatalogPageComponent } from './catalog-page/catalog-page.component';
+import { CreatePageComponent } from './create-page/create-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CatalogPageComponent } from './catalog-page/catalog-page.component';
     FanArtComponent,
     RegisterPageComponent,
     AboutPageComponent,
-    CatalogPageComponent
+    CatalogPageComponent,
+    CreatePageComponent
   ],
   imports: [
     BrowserModule,

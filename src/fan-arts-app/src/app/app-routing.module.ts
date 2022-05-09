@@ -6,6 +6,9 @@ import {AboutPageComponent}   from './about-page/about-page.component';
 import {CatalogPageComponent}   from './catalog-page/catalog-page.component';
 import {LoginPageComponent}   from './auth-pages/login-page/login-page.component';
 import {RegisterPageComponent}   from './auth-pages/register-page/register-page.component';
+
+import {CreatePageComponent}   from './create-page/create-page.component'
+
  
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -13,6 +16,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterPageComponent},
   {path: 'about', component: AboutPageComponent},
   {path: 'catalog', component: CatalogPageComponent},
+  {path: 'create', component: CreatePageComponent},
+
 ];
 
 @NgModule({
