@@ -17,6 +17,11 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { DetailsEditPageComponent } from './details-edit-page/details-edit-page.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
+import { MyPostsPageComponent } from './my-posts-page/my-posts-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfileEditPageComponent } from './profile-edit-page/profile-edit-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { DetailsEditPageComponent } from './details-edit-page/details-edit-page.
     AboutPageComponent,
     CatalogPageComponent,
     CreatePageComponent,
-    DetailsEditPageComponent
+    DetailsEditPageComponent,
+    DetailsPageComponent,
+    MyPostsPageComponent,
+    ProfilePageComponent,
+    ProfileEditPageComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
