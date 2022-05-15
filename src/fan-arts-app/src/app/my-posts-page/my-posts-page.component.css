@@ -1,0 +1,36 @@
+section#my-posts {
+    background-image: url("../../assets/Images/catalog-toparts-page/background2.png");
+    background-color: var(--primary-grey);
+    width: 100%;
+    position: relative;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+
+}
+section#my-posts div.my-posts-bar {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: var(--primary-grey);
+    border-bottom: 5px solid var(--primary-orange);
+    border-top: 5px solid var(--primary-orange);
+}
+
+section#my-posts div.title {
+    margin: 20px auto;
+    width: 300px;
+    border: 3px solid var(--primary-orange);
+}
+
+
+section#my-posts h2 {
+    font-size: 60px;
+    margin: 5px 0;
+    color: var(--primary-orange);
+    text-align: center;
+
+}
+app-list-of-fan-arts{
+
+    padding-top: 20px;
+}
+
