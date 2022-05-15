@@ -1,0 +1,25 @@
+<section id="search">
+    <div class="search-bar">
+
+        <div class="title">
+            <h2>Search</h2>
+        </div>
+
+        <section id="tags">
+            <form action="">
+                <div>
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" placeholder="Title..">
+                </div>
+                <div>
+                    <label for="tag">Tag: </label>
+                    <input type="text" id="tag" name="tag" placeholder="Marvel" />
+                </div>
+                <button>Search</button>
+            </form>
+        </section>
+
+    </div>
+
+    <app-list-of-fan-arts [fanArts]="fanArts" [theme]="theme"></app-list-of-fan-arts>
+</section>
