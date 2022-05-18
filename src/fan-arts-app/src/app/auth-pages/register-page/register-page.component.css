@@ -62,7 +62,7 @@ section#register #register-text label {
     color: var(--primary-orange);
 }
 section#register #register-text button {
-    width: 100%;
+    width: 30%;
     font-size: 17px;
     border-radius: 25px;
     margin-top: 10px;
@@ -72,7 +72,6 @@ section#register #register-text button {
 section#register #register-text button:hover {
     background-color: grey;
 }
-
 
 section#register #register-text h2 {
     font-size: 45px;
