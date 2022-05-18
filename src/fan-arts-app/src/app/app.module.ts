@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -20,9 +20,12 @@ import { CreatePageComponent } from './create-page/create-page.component';
 import { DetailsEditPageComponent } from './details-edit-page/details-edit-page.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { MyPostsPageComponent } from './my-posts-page/my-posts-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
-import { ProfileEditPageComponent } from './profile-edit-page/profile-edit-page.component';
+import { ProfilePageComponent } from './auth-pages/profile-page/profile-page.component';
+import { ProfileEditPageComponent } from './auth-pages/profile-edit-page/profile-edit-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+
+import { PasswordvalidatorDirective } from './auth-pages/register-page/passwordvalidator.directive';
+import { authInterceptorProviders } from './_helpers/auth.interceptors';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
     MyPostsPageComponent,
     ProfilePageComponent,
     ProfileEditPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    PasswordvalidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
