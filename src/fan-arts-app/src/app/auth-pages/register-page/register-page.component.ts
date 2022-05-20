@@ -15,7 +15,7 @@ export class RegisterPageComponent implements OnInit {
     username: null,
     email: null,
     password: null,
-    rePassword: null
+    repeatPassword: null
   };
   passwordsMatch = false;
   isSuccessful = false;
@@ -26,19 +26,22 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void { }
   onSubmit(): void {
-    const { username, email, password } = this.form;
+    const { username, email, password, repeatPassword } = this.form;
+    console.log(repeatPassword);
 
-    this.authService.register(username, email, password).subscribe(
-      data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    );
+    //console.log(username, email, password);
+    this.authService.register(username, email, password, repeatPassword)
+      .subscribe(
+        (data) => {
+          console.log(data);
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
+        },
+        err => {
+          this.errorMessage = err.error.message;
+          this.isSignUpFailed = true;
+        }
+      );
   }
 
 
