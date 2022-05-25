@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgForm } from '@angular/forms';
 
+
+
+import { TokenStorageService } from '../../_services/token-storage.service';
 import { AuthService } from '../../_services/auth.service';
 
 
@@ -22,7 +23,7 @@ export class RegisterPageComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void { }
   onSubmit(): void {
@@ -32,15 +33,14 @@ export class RegisterPageComponent implements OnInit {
     //console.log(username, email, password);
     this.authService.register(username, email, password, repeatPassword)
       .subscribe(
-        (data) => {
+        data => {
           console.log(data);
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
+          this.tokenStorage.saveToken(data.accessToken);
+          this.tokenStorage.saveUser(data);
         },
         err => {
           console.log(err);
           this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
         }
       );
   }
