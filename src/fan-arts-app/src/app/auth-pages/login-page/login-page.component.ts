@@ -25,9 +25,12 @@ export class LoginPageComponent implements OnInit {
     }
   }
   onSubmit(): void {
-    const { username, password } = this.form;
-    this.authService.login(username, password).subscribe(
+    const { email, password } = this.form;
+
+    console.log(email, password);
+    this.authService.login(email, password).subscribe(
       data => {
+        console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
@@ -35,6 +38,7 @@ export class LoginPageComponent implements OnInit {
         this.reloadPage();
       },
       err => {
+        console.log(err);
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
