@@ -1,7 +1,7 @@
 # Fan-arts-Site
 This is a simple site that shows different fan arts. You can publish a fan art, see other fan arts and much more...
 
-**Unaauthorized users**
+**Unauthorized users**
 
 Users who are unauthorized can access:
  -Catalog page
