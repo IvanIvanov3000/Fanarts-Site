@@ -5,19 +5,28 @@
 
         </a>
 
-        <ul>
-           <li><a class="aboutLink" href="">Home</a></li>
+        <ul *ngIf="isLoggedIn">
+            <li><a class="aboutLink" href="">Home</a></li>
             <li><a class="aboutLink" href="">About</a></li>
             <li><a class="catalogLink" href="">Catalog</a></li>
             <li><a class="catalogLink" href="">Search</a></li>
-           <!--  <li><a class="registerLinks" href="../HTML/login-page.html">Login</a></li>
-            <li><a class="registerLinks" href="../HTML/register-page.html">Register</a></li> -->
 
-            
             <li><a class="catalogLink" href="">Create</a></li>
             <li><a class="registerLinks" href="">Profile</a></li>
             <li><a class="registerLinks" href="">My posts</a></li>
-            <li><a class="registerLinks" href="">Logout</a></li>
+            <li><a class="registerLinks" (click)="onLogout()">Logout</a></li>
+
+        </ul>
+        <ul *ngIf="!isLoggedIn">
+            <li><a class="aboutLink" href="">Home</a></li>
+            <li><a class="aboutLink" href="">About</a></li>
+            <li><a class="catalogLink" href="">Catalog</a></li>
+            <li><a class="catalogLink" href="">Search</a></li>
+
+
+            <li><a class="registerLinks" href="../HTML/login-page.html">Login</a></li>
+            <li><a class="registerLinks" href="../HTML/register-page.html">Register</a></li>
+
         </ul>
     </nav>
 </header>
