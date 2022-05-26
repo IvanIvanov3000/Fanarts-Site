@@ -6,13 +6,15 @@
         <div class="wrapper">
             <h2>Register page</h2>
             <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidate>
-                
+
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required
                         minlength="5" maxlength="20" #username="ngModel" />
                     <div class="alert-danger" *ngIf="username.errors && f.submitted">
-                        <div *ngIf="username.errors['required']">Username is required</div>
+                        <div *ngIf="username.errors['required']">
+                            Username is required
+                        </div>
                         <div *ngIf="username.errors['minlength']">
                             Username must be at least 5 characters
                         </div>
@@ -23,8 +25,8 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email minlength="5"
-                        #email="ngModel" />
+                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+                        minlength="5" #email="ngModel" />
                     <div class="alert-danger" *ngIf="email.errors && f.submitted">
                         <div *ngIf="email.errors['required']">Email is required</div>
                         <div *ngIf="email.errors['email']">
@@ -42,7 +44,9 @@
                         minlength="6" #password="ngModel" />
 
                     <div class="alert-danger" *ngIf="password.errors && f.submitted">
-                        <div *ngIf="password.errors['required']">Password is required</div>
+                        <div *ngIf="password.errors['required']">
+                            Password is required
+                        </div>
                         <div *ngIf="password.errors['minlength']">
                             Password must be at least 6 characters
                         </div>
@@ -52,9 +56,9 @@
                     <label for="confirmPassword">Confirm Password</label>
 
 
-                    <input class="form-control" id="confirmPassword" type="password" 
-                        placeholder="Confirm Password (required)" required appPasswordvalidator="password" [(ngModel)]="form.repeatPassword"
-                        name="confirmPassword" #confirmPassword="ngModel" />
+                    <input class="form-control" id="confirmPassword" type="password"
+                        placeholder="Confirm Password (required)" required appPasswordvalidator="password"
+                        [(ngModel)]="form.repeatPassword" name="confirmPassword" #confirmPassword="ngModel" />
 
                     <div class="alert-danger" *ngIf="confirmPassword.errors && f.submitted">
                         <div *ngIf="confirmPassword.errors['required']">
@@ -72,7 +76,7 @@
                     <button class="btn btn-primary btn-block">Sign Up</button>
                 </div>
 
-               
+
 
                 <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
                     Signup failed!<br />{{ errorMessage }}
