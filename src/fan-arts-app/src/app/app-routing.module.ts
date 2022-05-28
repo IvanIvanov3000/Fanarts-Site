@@ -15,7 +15,7 @@ import { ProfilePageComponent } from './auth-pages/profile-page/profile-page.com
 import { ProfileEditPageComponent } from './auth-pages/profile-edit-page/profile-edit-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 
-import { AuthGuardService } from './auth-pages/auth-guard.service';
+import { AuthGuardGuard } from './auth-pages/auth-guard.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -24,14 +24,14 @@ const routes: Routes = [
   { path: 'catalog', component: CatalogPageComponent },
 
   { path: 'details', component: DetailsPageComponent },
-  { path: 'details/edit', component: DetailsEditPageComponent, canActivate: [AuthGuardService] },
-  { path: 'create', component: CreatePageComponent, canActivate: [AuthGuardService] },
+  { path: 'details/edit', component: DetailsEditPageComponent, canActivate: [AuthGuardGuard] },
+  { path: 'create', component: CreatePageComponent, canActivate: [AuthGuardGuard] },
 
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'myposts', component: MyPostsPageComponent, canActivate: [AuthGuardService] },
-  { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuardService] },
-  { path: 'profile/edit', component: ProfileEditPageComponent, canActivate: [AuthGuardService] },
+  { path: 'myposts', component: MyPostsPageComponent, canActivate: [AuthGuardGuard] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuardGuard] },
+  { path: 'profile/edit', component: ProfileEditPageComponent, canActivate: [AuthGuardGuard] },
 
 
 ];
