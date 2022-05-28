@@ -27,3 +27,16 @@ header a {
     font-size: 30px;
 
 }
+header button {
+    font-size: 29px;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px; 
+
+}
+header button:hover{
+    text-decoration: underline; 
+    cursor: pointer;
+ 
+}

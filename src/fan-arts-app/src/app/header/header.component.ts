@@ -16,22 +16,28 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     const token = this.tokenStorage.getToken();
-    console.log(token);
 
     if (token) {
       this.isLoggedIn = true;
-      console.log(this.isLoggedIn, "--is logged in");
     } else {
       this.isLoggedIn = false;
-      console.log(this.isLoggedIn, "--is logged in");
-
     }
   }
 
   onLogout() {
     this.tokenStorage.logOut();
-    this.router.navigate(['/']);
-    return;
+    // setTimeout(() => {
+    //     console.log("Delayed for 1 second.");
+    //   this.router.navigate(['/register']);
+    // }, 1000);
+
+    // setTimeout(() => {
+
+    //   this.reloadPage();
+    //   console.log("Delayed for 3 second.");
+    // }, 3000)
+    return window.location.reload();
+
   }
 
 }
