@@ -47,3 +47,16 @@ footer nav.externalLinks a{
 footer a {
     font-size: 25px;
 }
+footer button {
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px; 
+
+}
+footer button:hover{
+    text-decoration: underline; 
+    cursor: pointer;
+ 
+}

@@ -1,20 +1,25 @@
 <footer>
     <nav class="internalLinks">
-        <ul>
-            <li><a class="aboutLink" href="/">Home</a></li>
-            <li><a class="aboutLink" href="/about">About</a></li>
-            <li><a class="catalogLink" href="/catalog">Catalog</a></li>
-            <li><a class="catalogLink" href="/search">Search</a></li>
+        <ul *ngIf="isLoggedIn">
+            <li><a class="aboutLink" [routerLink]="['/']">Home</a></li>
+            <li><a class="aboutLink" [routerLink]="['/about']">About</a></li>
+            <li><a class="catalogLink" [routerLink]="['/catalog']">Catalog</a></li>
+            <li><a class="catalogLink" [routerLink]="['/search']">Search</a></li>
 
-           <li><a class="registerLinks" href="/login">Login</a></li>
-            <li><a class="registerLinks" href="/register">Register</a></li> 
+            <li><a class="catalogLink" [routerLink]="['/create']">Create</a></li>
+            <li><button class="registerLinks" (click)="onLogout()">Logout</button></li>
 
-            <!-- 
-            <li><a class="catalogLink" href="/create">Post Arts</a></li>
-            <li><a class="registerLinks" href="/profile">Profile</a></li>
-            <li><a class="registerLinks" href="/my/posts">My posts</a></li>
-            -->
-            
+        </ul>
+        <ul *ngIf="!isLoggedIn">
+            <li><a class="aboutLink" [routerLink]="['/']">Home</a></li>
+            <li><a class="aboutLink" [routerLink]="['/about']">About</a></li>
+            <li><a class="catalogLink" [routerLink]="['/catalog']">Catalog</a></li>
+            <li><a class="catalogLink" [routerLink]="['/search']">Search</a></li>
+
+
+            <li><a class="registerLinks" [routerLink]="['/login']">Login</a></li>
+            <li><a class="registerLinks" [routerLink]="['/register']">Register</a></li>
+
         </ul>
     </nav>
     <img src="./assets/Images/footer.png" alt="">
