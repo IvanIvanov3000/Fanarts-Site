@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+
 import { AuthService } from '../../_services/auth.service';
 import { TokenStorageService } from '../../_services/token-storage.service';
 
@@ -17,7 +20,9 @@ export class LoginPageComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, public router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -27,7 +32,6 @@ export class LoginPageComponent implements OnInit {
   onSubmit(): void {
     const { email, password } = this.form;
 
-    console.log(email, password);
     this.authService.login(email, password).subscribe(
       data => {
         console.log(data);
@@ -35,7 +39,17 @@ export class LoginPageComponent implements OnInit {
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.reloadPage();
+
+        setTimeout(() => {
+          this.router.navigate(['/']);
+          console.log("Delayed for 2 second.");
+        }, 2000);
+
+        setTimeout(() => {
+          this.reloadPage();
+
+          console.log("Delayed for 2 second.");
+        }, 2000);
       },
       err => {
         console.log(err);
@@ -49,3 +63,5 @@ export class LoginPageComponent implements OnInit {
   }
 
 }
+
+
