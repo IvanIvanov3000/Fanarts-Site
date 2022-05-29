@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { TokenStorageService } from './token-storage.service';
 
-const AUTH_API = 'http://localhost:3000/';
+const AUTH_API = 'http://localhost:3000/fanArts/';
 
 let getOptions = (tokenService : any) => {
 
@@ -20,7 +20,7 @@ let getOptions = (tokenService : any) => {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
   }
-  console.log(httpOptions);
+
   return httpOptions;
 }
 
@@ -40,5 +40,8 @@ export class FanArtsService {
       tag,
       description,
     }, getOptions(this.tokenService));
+  }
+  getLatestFanArts(): Observable<any> {
+    return this.http.post(AUTH_API + '', {}, getOptions(this.tokenService));
   }
 }

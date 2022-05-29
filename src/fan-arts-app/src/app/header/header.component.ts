@@ -27,14 +27,12 @@ export class HeaderComponent implements OnInit {
   onLogout() {
     this.tokenStorage.logOut();
     // setTimeout(() => {
-    //     console.log("Delayed for 1 second.");
     //   this.router.navigate(['/register']);
     // }, 1000);
 
     // setTimeout(() => {
 
     //   this.reloadPage();
-    //   console.log("Delayed for 3 second.");
     // }, 3000)
     return window.location.reload();
 

@@ -34,7 +34,6 @@ export class LoginPageComponent implements OnInit {
 
     this.authService.login(email, password).subscribe(
       data => {
-        console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
@@ -42,13 +41,10 @@ export class LoginPageComponent implements OnInit {
 
         setTimeout(() => {
           this.router.navigate(['/']);
-          console.log("Delayed for 2 second.");
         }, 2000);
 
         setTimeout(() => {
           this.reloadPage();
-
-          console.log("Delayed for 2 second.");
         }, 2000);
       },
       err => {

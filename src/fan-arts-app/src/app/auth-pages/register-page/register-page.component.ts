@@ -27,24 +27,19 @@ export class RegisterPageComponent implements OnInit {
   ngOnInit(): void { }
   onSubmit(): void {
     const { username, email, password, repeatPassword } = this.form;
-    console.log(repeatPassword);
 
-    //console.log(username, email, password);
     this.authService.register(username, email, password, repeatPassword)
       .subscribe(
         data => {
-          console.log(data);
           this.tokenStorage.saveToken(data.accessToken);
           this.tokenStorage.saveUser(data);
           setTimeout(() => {
             this.router.navigate(['/']);
-            console.log("Delayed for 0.5 second.");
           }, 500);
 
           setTimeout(() => {
             this.reloadPage();
 
-            console.log("Delayed for 2 second.");
           }, 2000);
         },
         err => {
