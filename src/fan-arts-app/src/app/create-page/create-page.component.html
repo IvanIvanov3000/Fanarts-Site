@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label for="image">Image link:</label>
                     <input type="text" class="form-control" name="image" [(ngModel)]="form.image" required
-                        pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)" #image="ngModel" />
+                        pattern="(http(s?):).+" #image="ngModel" />
                     <div class="alert-danger" *ngIf="image.errors && f.submitted">
                         <div *ngIf="image.errors['required']">
                             Image link is required
@@ -42,17 +42,22 @@
                     <label for="isPublic">Public: </label>
                     <div class="wrapper">
                         <span>
-                            <input type="radio" id="isPublic" [(ngModel)]="form.isPublic"  name="
-                                isPublic" value="true">
+                            <input type="radio" id="isPublic" class="form-control" [(ngModel)]="form.isPublic" name=" 
+                                isPublic" required value="true" #isPublic="ngModel">
                             <label for="isPublic">Public</label>
-                        </span>
+                        </span> 
                         <span>
 
-                            <input type="radio" id="private" [(ngModel)]="form.isPublic"  name="
+                            <input type="radio" id="private" [(ngModel)]="form.isPublic" name="
                                 isPublic" value="false">
                             <label for="priate">Private</label>
                         </span>
+                        <div class="alert-danger" *ngIf="isPublic.errors && f.submitted">
+                            <div *ngIf="isPublic.errors['required']">
+                                Public property is required.
+                            </div>
 
+                        </div>
                     </div>
 
                 </div>
