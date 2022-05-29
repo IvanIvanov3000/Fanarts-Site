@@ -28,25 +28,22 @@ export class CreatePageComponent implements OnInit {
 
   onSubmit(): void {
     const { title, image, isPublic, tag, description } = this.form;
-
-    console.log(title, image, isPublic, tag, description);
     this.fanArtsService.create(title, image, isPublic, tag, description)
       .subscribe(
         data => {
-          console.log(data);
+          this.isSuccessful = true;
           setTimeout(() => {
-            this.router.navigate(['/']);
-            console.log("Delayed for 0.5 second.");
+            this.router.navigate(['/catalog']);
           }, 500);
 
           setTimeout(() => {
             this.reloadPage();
-
-            console.log("Delayed for 2 second.");
           }, 2000);
         },
         err => {
           console.log(err);
+          this.isSuccessful = false;
+
           this.errorMessage = err.error.message;
         }
       );
