@@ -19,7 +19,7 @@ export class RegisterPageComponent implements OnInit {
   };
   passwordsMatch = false;
   isSuccessful = false;
-  isSignUpFailed = false;
+  isSignInFailed = false;
   errorMessage = '';
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, public router: Router) { }
@@ -49,6 +49,7 @@ export class RegisterPageComponent implements OnInit {
         },
         err => {
           console.log(err);
+          this.isSignInFailed = true;
           this.errorMessage = err.error.message;
         }
       );
