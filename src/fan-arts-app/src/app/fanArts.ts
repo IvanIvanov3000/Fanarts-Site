@@ -1,12 +1,14 @@
 export interface FanArt {
-    id: number;
+    _id: number;
     title: string;
+    isPublic: boolean;
     image: string;
     tag: string;
     description: string;
+    author: any;
 }
 
-export const example: FanArt[] = [
+export const example = [
     {
         id: 1,
         title: "Spiderman is cute",
