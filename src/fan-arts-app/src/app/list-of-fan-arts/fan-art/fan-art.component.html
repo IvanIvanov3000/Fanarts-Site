@@ -7,8 +7,8 @@
         <h3>{{fanArt.title}}</h3>
         <p class="description">
             <!-- {{fanArt.description}} -->
-            {{ (fanArt.description.length>150)? (fanArt.description | slice:0:150)+'..':(fanArt.description) }}
+            {{ (fanArt.description.length>65)? (fanArt.description | slice:0:65)+'..':(fanArt.description) }}
         </p>
-        <button class="toDetailsPage"><a href="">Details</a></button>
+        <button class="toDetailsPage" [routerLink]="['/details', fanArt._id]">Details</button>
     </div>
 </article>
