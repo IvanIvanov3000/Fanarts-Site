@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FanArt } from '../../fanArts'
 
@@ -11,9 +12,9 @@ export class FanArtComponent implements OnInit {
 
   @Input() fanArt!: FanArt;
   @Input() theme!: string;
-  
-  constructor() { }
 
-  ngOnInit(): void {}
+  constructor(private router: Router) { }
+
+  ngOnInit(): void { }
 
 }
