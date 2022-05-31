@@ -1,48 +1,41 @@
 <section id="details">
-    <div id="details-hero"></div>
+    <div id="details-hero" *ngIf="fanArt"></div>
 
-        <div id="details-text">
-            <img src="https://cdn.domestika.org/c_fit,dpr_auto,f_auto,t_base_params,w_820/v1596833467/content-items/005/440/308/00F4D0F7-71EC-401E-9E1D-0A87DDEEBF67-original.jpeg?1596833467"
-                alt="">
-            <div class="wrapper">
-                <div>
-                    <p>Title:</p>
-                    <span>Draco disagrees</span>
-                </div>
-                <div>
-                    <p>Tag:</p>
-                    <span>Harry Poter</span>
-                </div>
-                <div>
-                    <p>Public:</p>
-                    <span>Yes</span>
-                </div>
-                <div>
-                    <p>Author:</p>
-                    <span>Ivan_3000 </span>
-                </div>
-                <div>
-                    <p>Description:</p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fugiat cupiditate quod
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam sed quia
-                        laudantium beatae accusamus aliquam sint libero deleniti architecto autem, unde, perferendis
-                        eos, nobis dolor ea maxime soluta doloribus.
-                        Veritatis expedita ad tempora aliquam facere quasi quibusdam quo nulla, quae error
-                        aspernatur ducimus perferendis perspiciatis atque accusamus optio corium pariatur cupiditate
-                        error doloremque?
-                        Non saepe ipsam impedit aliquam. Quas iste, consequatur facilis, quam labore porro saepe
-                        nesciunt tenetur sint eveniet iure placeat repudiandae quae. Voluptatibus, illo tenetur
-                        expli maxime deserunt fuga repellat.
-                    </span>
-                </div>
-                <div class="buttons">
-                    <!-- <button class="like">Like</button>
-                <button class="dislike">Dislike</button> -->
-                    <button lass="edit" href="">Edit</button>
-                    <button class="delete">Delete</button>
-                </div>
+    <div id="details-text">
+        <img src={{fanArt.image}} alt="A fan art image">
+        <div class="wrapper">
+            <div>
+                <p>Title:</p>
+                <span>{{fanArt.title}}</span>
+            </div>
+            <div>
+                <p>Tag:</p>
+                <span>{{fanArt.tag}}</span>
+            </div>
+            <div>
+                <p>Public:</p>
+                <span *ngIf="show">Yes</span>
+                <span *ngIf="!show">No</span>
+
+            </div>
+            <div>
+                <p>Author:</p>
+                <span>{{fanArt.author.username}}</span>
+            </div>
+            <div>
+                <p>Description:</p>
+                <span>{{fanArt.description}}</span>
+            </div>
+            <div class="buttons" *ngIf="isOwner">
+                <button lass="edit" [routerLink]="['/details', fanArt._id, 'edit']">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+            <div class="buttons" *ngIf="!isOwner">
+                <button class="like">Like</button>
+                <button class="dislike">Dislike</button>
             </div>
         </div>
+    </div>
 
-   
+
 </section>
