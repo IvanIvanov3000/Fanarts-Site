@@ -11,7 +11,7 @@ export class MyPostsPageComponent implements OnInit {
 
 
   theme = "orange"
-  fanArts: FanArt[] = example
+  fanArts!: FanArt[];
   constructor() { }
 
   ngOnInit(): void {
