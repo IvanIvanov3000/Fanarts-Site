@@ -41,7 +41,14 @@ export class FanArtsService {
       description,
     }, getOptions(this.tokenService));
   }
+
   getLatestFanArts(): Observable<any> {
-    return this.http.post(AUTH_API + '', {}, getOptions(this.tokenService));
+    return this.http.get(AUTH_API + 'latestFanArts', getOptions(this.tokenService));
+  }
+  getAllFanArts(): Observable<any> {
+    return this.http.get(AUTH_API + 'catalog', getOptions(this.tokenService));
+  }
+  getFanArt(_id : any): Observable<any> {
+    return this.http.get(AUTH_API + 'details/' + _id, getOptions(this.tokenService));
   }
 }
