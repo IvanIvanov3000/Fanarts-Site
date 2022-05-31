@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { example, FanArt } from '../fanArts';
+import { FanArt } from '../fanArts';
+import { FanArtsService } from '../_services/fan-arts.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,11 +10,22 @@ import { example, FanArt } from '../fanArts';
 })
 export class HomePageComponent implements OnInit {
 
+  errorMessage = "";
   theme = "yellow"
-  fanArts: FanArt[] = example
-  constructor() { }
+  fanArts!: FanArt[];
+  constructor(private fanArtsService: FanArtsService) { }
 
   ngOnInit(): void {
+    this.fanArtsService.getLatestFanArts().subscribe(
+      data => {
+        this.fanArts = data;
+      },
+      err => {
+        console.log(err);
+
+        this.errorMessage = err.error.message;
+      }
+    );
   }
 
 }
