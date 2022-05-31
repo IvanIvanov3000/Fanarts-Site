@@ -1,62 +1,112 @@
 <section id="details-edit">
-    <div id="details-edit-hero"></div>
+    <div id="details-edit-fanArt"></div>
 
     <div id="details-edit-text">
         <img src="./assets/Images/catalog-toparts-page/water-logo-grey.png" alt="">
         <div class="wrapper">
             <h2>Edit</h2>
 
-            <form method="post">
-                <div>
+            <form *ngIf="form$ | async as form" name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidate>
 
-                    <label for="ftitle">Title:</label>
-                    <input type="text" id="ftitle" name="ftitle" placeholder="The best drawing everr!">
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" [(ngModel)]="form.title" required minlength="5" maxlength="40"
+                        #title="ngModel" />
+                    <div class="alert-danger" *ngIf="title.errors && f.submitted">
+                        <div *ngIf="title.errors['required']">
+                            Title is required
+                        </div>
+                        <div *ngIf="title.errors['minlength']">
+                            Title must be at least 5 characters
+                        </div>
+                        <div *ngIf="title.errors['maxlength']">
+                            Title must be at most 40 characters
+                        </div>
+                    </div>
                 </div>
-                <div>
-
-                    <label for="image">Image link: </label>
-                    <input type="text" id="image" name="image" placeholder="http://google/image">
+                <div class="form-group">
+                    <label for="image">Image link:</label>
+                    <input type="text" name="image" [(ngModel)]="form.image" required pattern="(http(s?):).+"
+                        #image="ngModel" />
+                    <div class="alert-danger" *ngIf="image.errors && f.submitted">
+                        <div *ngIf="image.errors['required']">
+                            Image link is required
+                        </div>
+                        <div *ngIf="image.errors['pattern']">
+                            Image link must be a valid image link
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="form-group">
 
-                    <label for="image">Public: </label>
+                    <label for="isPublic">Public: </label>
                     <div class="wrapper">
                         <span>
-                            <input type="radio" id="public" name="interest" value="true">
-                            <label for="public">Public</label>
+                            <input type="radio" name="isPublic" required #isPublic="ngModel" value="Male"
+                                [(ngModel)]="form.isPublic">
+                            <label for="isPublic">Male</label>
                         </span>
                         <span>
 
-                            <input type="radio" id="private" name="interest" value='false'>
-                            <label for="priate">Private</label>
+                            <input type="radio" name="isPublic" required #isPublic="ngModel" value="Female"
+                                [(ngModel)]="form.isPublic">
+                            <label for="female">Female</label>
                         </span>
+                        <div class="alert-danger" *ngIf="isPublic.errors && f.submitted">
+                            <div *ngIf="isPublic.errors['required']">
+                                Public property is required.
+                            </div>
 
+                        </div>
                     </div>
 
                 </div>
-                <div>
-
-                    <label for="ftag">Tag:</label>
-
-                    <select id="ftag" name="ftag">
-                        <option value="Other">Other</option>
-                        <option value="Marvel">Marvel</option>
-                        <option value="DC">DC</option>
-                        <option value="Harry_Poter">Harry Poter</option>
-                        <option value="Star_wars">Star Wars</option>
-                        <option value="Video_game">Video game</option>
-                    </select>
+                <div class="form-group">
+                    <label for="tag">Tag :</label>
+                    <input type="text" name="tag" [(ngModel)]="form.tag" required minlength="5" maxlength="30"
+                        #tag="ngModel" />
+                    <div class="alert-danger" *ngIf="tag.errors && f.submitted">
+                        <div *ngIf="tag.errors['required']">
+                            Tag is required
+                        </div>
+                        <div *ngIf="tag.errors['minlength']">
+                            Tag must be at least 5 characters
+                        </div>
+                        <div *ngIf="tag.errors['maxlength']">
+                            Tag must be at most 30 characters
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="form-group">
 
-                    <label for="desc">Description: </label>
-                    <textarea name="desc" id="desc"
+                    <label for="description">Description: </label>
+                    <textarea type="text" name="description" [(ngModel)]="form.description" required minlength="100"
+                        maxlength="220" #description="ngModel"
                         placeholder="This is where the description of the fan art must be at. It must be at least 50 characters long.">
-                </textarea>
+                    </textarea>
+
+                    <div class="alert-danger" *ngIf="description.errors && f.submitted">
+                        <div *ngIf="description.errors['required']">
+                            Description is required
+                        </div>
+                        <div *ngIf="description.errors['minlength']">
+                            Description must be at least 100 characters
+                        </div>
+                        <div *ngIf="description.errors['maxlength']">
+                            Description must be at most 220 characters
+                        </div>
+                    </div>
                 </div>
 
                 <button type="submit">Submit</button>
+
+                <div class="alert alert-warning" *ngIf="f.submitted && isCreateFailed">
+                    Create failed<br />{{ errorMessage }}
+                </div>
             </form>
+            <div class="alert alert-success" *ngIf="isSuccessful">
+                Congratulations! You created a fan art!
+            </div>
         </div>
 
     </div>
