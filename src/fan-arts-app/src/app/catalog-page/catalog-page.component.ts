@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { example, FanArt } from '../fanArts';
+import { FanArt } from '../fanArts';
+import { FanArtsService } from '../_services/fan-arts.service';
+
 
 @Component({
   selector: 'app-catalog-page',
@@ -10,10 +12,19 @@ import { example, FanArt } from '../fanArts';
 export class CatalogPageComponent implements OnInit {
 
   theme = "blue";
-  fanArts: FanArt[] = example;
-  constructor() { }
+  fanArts!: FanArt[]
+  constructor(private fanArtsService: FanArtsService) { }
 
-  ngOnInit(): void {
+
+   ngOnInit(): void {
+    this.fanArtsService.getAllFanArts().subscribe(
+      data => {
+        this.fanArts = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }
