@@ -10,7 +10,7 @@ import { example, FanArt } from '../fanArts';
 export class SearchPageComponent implements OnInit {
 
   theme = "blue"
-  fanArts: FanArt[] = example
+  fanArts!: FanArt[];
   constructor() { }
 
   ngOnInit(): void {
