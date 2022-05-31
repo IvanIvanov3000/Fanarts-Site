@@ -51,6 +51,8 @@ section#details #details-text h2 {
     font-size: 45px;
     color: var(--primary-blue);
     text-align: center;
+    word-break: break-all;
+
     margin-bottom: 35px;
 }
 
@@ -64,6 +66,8 @@ section#details #details-text div.wrapper div p {
     text-align: right;
 }
 section#details #details-text div.wrapper div span {
+    word-break: break-all;
+
     width: 81%;
     text-align: left;
 }
