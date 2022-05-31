@@ -23,8 +23,8 @@ const routes: Routes = [
   { path: 'search', component: SearchPageComponent },
   { path: 'catalog', component: CatalogPageComponent },
 
-  { path: 'details', component: DetailsPageComponent },
-  { path: 'details/edit', component: DetailsEditPageComponent, canActivate: [AuthGuardGuard] },
+  { path: 'details/:id', component: DetailsPageComponent },
+  { path: 'details/:id/edit', component: DetailsEditPageComponent, canActivate: [AuthGuardGuard] },
   { path: 'create', component: CreatePageComponent, canActivate: [AuthGuardGuard] },
 
   { path: 'login', component: LoginPageComponent },
