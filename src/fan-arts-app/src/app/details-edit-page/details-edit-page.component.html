@@ -1,12 +1,13 @@
+@@ -0,0 +1,113 @@
 <section id="details-edit">
-    <div id="details-edit-fanArt"></div>
+    <div id="details-edit-hero"></div>
 
     <div id="details-edit-text">
         <img src="./assets/Images/catalog-toparts-page/water-logo-grey.png" alt="">
         <div class="wrapper">
             <h2>Edit</h2>
 
-            <form *ngIf="form$ | async as form" name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidate>
+            <form *ngIf="form" name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidate>
 
                 <div class="form-group">
                     <label for="title">Title: </label>
@@ -42,15 +43,15 @@
                     <label for="isPublic">Public: </label>
                     <div class="wrapper">
                         <span>
-                            <input type="radio" name="isPublic" required #isPublic="ngModel" value="Male"
-                                [(ngModel)]="form.isPublic">
-                            <label for="isPublic">Male</label>
-                        </span>
+                            <input type="radio" class="form-control" [(ngModel)]="form.isPublic" name=" 
+                                isPublic" required value="public" #isPublic="ngModel">
+                            <label for="isPublic">Public</label>
+                        </span> 
                         <span>
 
-                            <input type="radio" name="isPublic" required #isPublic="ngModel" value="Female"
-                                [(ngModel)]="form.isPublic">
-                            <label for="female">Female</label>
+                            <input type="radio" [(ngModel)]="form.isPublic" name="
+                                isPublic" value="private">
+                            <label for="priate">Private</label>
                         </span>
                         <div class="alert-danger" *ngIf="isPublic.errors && f.submitted">
                             <div *ngIf="isPublic.errors['required']">
@@ -63,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tag">Tag :</label>
-                    <input type="text" name="tag" [(ngModel)]="form.tag" required minlength="5" maxlength="30"
+                    <input type="text" name="tag" [(ngModel)]="form.tag" required minlength="5" maxlength="25"
                         #tag="ngModel" />
                     <div class="alert-danger" *ngIf="tag.errors && f.submitted">
                         <div *ngIf="tag.errors['required']">
@@ -73,7 +74,7 @@
                             Tag must be at least 5 characters
                         </div>
                         <div *ngIf="tag.errors['maxlength']">
-                            Tag must be at most 30 characters
+                            Tag must be at most 25 characters
                         </div>
                     </div>
                 </div>
