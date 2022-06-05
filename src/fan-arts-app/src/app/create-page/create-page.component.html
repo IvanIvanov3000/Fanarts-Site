@@ -1,3 +1,4 @@
+@@ -0,0 +1,129 @@
 <section id="create">
     <div id="create-hero"></div>
 
@@ -9,9 +10,12 @@
             <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidate>
 
                 <div class="form-group">
-                    <label for="title">Title: </label>
-                    <input type="text" class="form-control" name="title" [(ngModel)]="form.title" required minlength="5"
-                        maxlength="40" #title="ngModel" />
+                    <div class="inputFileds">
+                        <label for="title">Title: </label>
+                        <input type="text" class="form-control" name="title" [(ngModel)]="form.title" required
+                            minlength="5" maxlength="40" #title="ngModel" />
+                    </div>
+
                     <div class="alert-danger" *ngIf="title.errors && f.submitted">
                         <div *ngIf="title.errors['required']">
                             Title is required
@@ -25,9 +29,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="image">Image link:</label>
-                    <input type="text" class="form-control" name="image" [(ngModel)]="form.image" required
-                        pattern="(http(s?):).+" #image="ngModel" />
+                    <div class="inputFileds">
+                        <label for="image">Image link:</label>
+                        <input type="text" class="form-control" name="image" [(ngModel)]="form.image" required
+                            pattern="(http(s?):).+" #image="ngModel" />
+                    </div>
+
                     <div class="alert-danger" *ngIf="image.errors && f.submitted">
                         <div *ngIf="image.errors['required']">
                             Image link is required
@@ -39,32 +46,40 @@
                 </div>
                 <div class="form-group">
 
-                    <label for="isPublic">Public: </label>
+                    <div class="inputFileds">
+                        <label for="isPublic">Public: </label>
                     <div class="wrapper">
                         <span>
                             <input type="radio" id="isPublic" class="form-control" [(ngModel)]="form.isPublic" name=" 
                                 isPublic" required value="true" #isPublic="ngModel">
                             <label for="isPublic">Public</label>
-                        </span> 
+                        </span>
                         <span>
 
                             <input type="radio" id="private" [(ngModel)]="form.isPublic" name="
                                 isPublic" value="false">
                             <label for="priate">Private</label>
                         </span>
-                        <div class="alert-danger" *ngIf="isPublic.errors && f.submitted">
-                            <div *ngIf="isPublic.errors['required']">
-                                Public property is required.
-                            </div>
 
-                        </div>
+                        
                     </div>
+                    </div>
+                    
+                    <div class="alert-danger" *ngIf="isPublic.errors && f.submitted">
+                        <div *ngIf="isPublic.errors['required']">
+                            Public property is required.
+                        </div>
 
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="tag">Tag :</label>
-                    <input type="text" class="form-control" name="tag" [(ngModel)]="form.tag" required minlength="5"
-                        maxlength="30" #tag="ngModel" />
+                    <div class="inputFileds">
+                        <label for="tag">Tag :</label>
+                        <input type="text" class="form-control" name="tag" [(ngModel)]="form.tag" required minlength="5"
+                        maxlength="25" #tag="ngModel" />
+                       
+                    </div>
+                                       
                     <div class="alert-danger" *ngIf="tag.errors && f.submitted">
                         <div *ngIf="tag.errors['required']">
                             Tag is required
@@ -73,18 +88,20 @@
                             Tag must be at least 5 characters
                         </div>
                         <div *ngIf="tag.errors['maxlength']">
-                            Tag must be at most 30 characters
+                            Tag must be at most 25 characters
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
 
-                    <label for="description">Description: </label>
+                <div class="form-group">
+                    <div class="inputFileds">
+                        <label for="description">Description: </label>
                     <textarea type="text" class="form-control" name="description" [(ngModel)]="form.description"
                         required minlength="100" maxlength="220" #description="ngModel"
-                        placeholder="This is where the description of the fan art must be at. It must be at least 50 characters long.">
+                        placeholder="This is where the description of the fan art must be at. It must be at least 100 characters long.">
                     </textarea>
-
+                    </div>
+                    
                     <div class="alert-danger" *ngIf="description.errors && f.submitted">
                         <div *ngIf="description.errors['required']">
                             Description is required
@@ -100,7 +117,7 @@
 
                 <button type="submit">Submit</button>
 
-                <div class="alert alert-warning" *ngIf="f.submitted && isCreateFailed">
+                <div class="alert alert-danger" *ngIf="f.submitted && isCreateFailed">
                     Create failed<br />{{ errorMessage }}
                 </div>
             </form>
