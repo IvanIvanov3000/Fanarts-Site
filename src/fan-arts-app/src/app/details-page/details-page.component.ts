@@ -1,3 +1,4 @@
+@@ -0,0 +1,131 @@
 //import { switchMap } from 'rxjs/operators';
 
 import { Component, OnInit } from '@angular/core';
@@ -24,15 +25,20 @@ export class DetailsPageComponent implements OnInit {
     image: '',
     tag: '',
     description: '',
-    author: ''
+    author: '',
+    likes: null,
   }
+  loggedIn: boolean = false;
   isOwner: boolean = false;
-  show!: boolean;
+  isLiked!: boolean ;
+
+  errorMessage = "";
+
 
   constructor(
     private fanArtsService: FanArtsService,
     private route: ActivatedRoute,
-    private router: Router,
+    public router: Router,
     private tokenService: TokenStorageService,
   ) { }
 
@@ -44,27 +50,83 @@ export class DetailsPageComponent implements OnInit {
     //     return this.fanArtsService.getFanArt(params.get('id')!);
     //   }));
     const currentUser = this.tokenService.getUser();
-
+    const token = this.tokenService.getToken();
+    if (token) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
     let id = this.route.snapshot.params['id'];
     this.fanArtsService.getFanArt(id).subscribe(
       data => {
         this.fanArt = data;
+        let likes = this.fanArt.likes;
+        this.fanArt.likes = this.fanArt.likes.length;
         let author = data.author._id;
-        let id = currentUser.id;
 
-        if (author == id) {
+        console.log(likes, currentUser.id);
+        if(likes.includes(currentUser.id)){
+          this.isLiked = true;
+        }else {
+          this.isLiked = false;
+        }
+        if (author == currentUser.id) {
           this.isOwner = true;
         } else {
           this.isOwner = false;
         }
-        this.show = this.fanArt.isPublic;
+      },
+      err => {
+        this.errorMessage = err.message;
+        console.log(err);
+
+      });
+  }
+  onDelete() {
+    //window.alert("Are you sure you want to delete this fan art?");
+    this.fanArtsService.deleteFanArt(this.fanArt._id).subscribe(
+      data => {
+        setTimeout(() => {
+          this.router.navigate(['/myposts']);
+        }, 1000);
       },
       err => {
         console.log(err);
       });
+    
+  }
+  reloadPage(): void {
+    window.location.reload();
+  }
+  onLike() {
+    this.fanArtsService.likeFanArt(this.fanArt.
+      _id).subscribe(
+        data => {
+          console.log(data);
+          this.reloadPage();
+        },
+        err => {
+
+          this.errorMessage = err.error.message || err.message;
+
+          console.log(err);
+        });
+    // this.router.navigate(['details' ,this.fanArt._id]);
+
 
 
   }
+  onDislike() {
+    this.fanArtsService.dislikeFanArt(this.fanArt._id).subscribe(
+      data => {
+        console.log(data);
+        this.reloadPage();
 
+      },
+      err => {
+        this.errorMessage = err.error.message || err.message;
+        console.log(err);
+      });
 
+  }
 }
