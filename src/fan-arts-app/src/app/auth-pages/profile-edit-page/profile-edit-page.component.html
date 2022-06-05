@@ -1,25 +1,53 @@
+@@ -0,0 +1,52 @@
 <section id="profile-edit">
     <div id="profile-edit-hero"></div>
 
     <div id="profile-edit-text">
         <img src="../../assets/Images/login-register/fire-logo-grey.png" alt="">
         <h2>Profile</h2>
-        
-        <form method="post">
-            <label for="fusername">Username:</label><br>
-            <input type="text" id="fusername" name="fusername" placeholder="Ivan_3000"><br>
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidatemethod="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+                    minlength="5" maxlength="20" #username="ngModel" />
+                <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                    <div *ngIf="username.errors['required']">
+                        Username is required
+                    </div>
+                    <div *ngIf="username.errors['minlength']">
+                        Username must be at least 5 characters
+                    </div>
+                    <div *ngIf="username.errors['maxlength']">
+                        Username must be at most 20 characters
+                    </div>
+                </div>
+            </div>
 
-            <label for="femail">Email:</label><br>
-            <input type="text" id="femail" name="femail" placeholder="ivan_ivanov_3000@abv.bg"><br>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+                    minlength="5" #email="ngModel" />
+                <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                    <div *ngIf="email.errors['required']">Email is required</div>
+                    <div *ngIf="email.errors['email']">
+                        Email must be a valid email address
+                    </div>
+                </div>
+            </div>
 
-            
+
 
             <div class="wrapper">
 
-                <button >Cancel</button>
+                <button [routerLink]="['/profile']">Cancel</button>
                 <button type="submit">Submit</button>
             </div>
-
+            <div class="alert alert-danger" *ngIf="f.submitted && isEditFailed">
+                    Edit profile failed!<br />{{ errorMessage }}
+            </div>
         </form>
+        <div class="alert alert-success" *ngIf="!isEditFailed && f.submitted">
+            Your edit profile is successful!
+        </div>
     </div>
 </section>
