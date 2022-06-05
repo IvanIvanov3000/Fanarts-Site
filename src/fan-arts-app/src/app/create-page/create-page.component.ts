@@ -1,3 +1,4 @@
+@@ -0,0 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -33,12 +34,12 @@ export class CreatePageComponent implements OnInit {
         data => {
           this.isSuccessful = true;
           setTimeout(() => {
-            this.router.navigate(['/catalog']);
-          }, 500);
+            this.router.navigate(['/myposts']);
+          }, 1500);
 
           setTimeout(() => {
             this.reloadPage();
-          }, 2000);
+          }, 2500);
         },
         err => {
           console.log(err);
