@@ -1,3 +1,4 @@
+@@ -0,0 +1,14 @@
 <article class={{theme}}>
     <div class="tag">{{fanArt.tag}}</div>
 
@@ -7,7 +8,7 @@
         <h3>{{fanArt.title}}</h3>
         <p class="description">
             <!-- {{fanArt.description}} -->
-            {{ (fanArt.description.length>65)? (fanArt.description | slice:0:65)+'..':(fanArt.description) }}
+            {{ (fanArt.description.length>65)? (fanArt.description | slice:0:65)+'...':(fanArt.description) }}
         </p>
         <button class="toDetailsPage" [routerLink]="['/details', fanArt._id]">Details</button>
     </div>
