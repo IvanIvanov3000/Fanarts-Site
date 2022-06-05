@@ -1,3 +1,4 @@
+@@ -0,0 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FanArt } from '../fanArts';
@@ -11,6 +12,7 @@ import { FanArtsService } from '../_services/fan-arts.service';
 })
 export class CatalogPageComponent implements OnInit {
 
+  areThereFanArts! : boolean;
   theme = "blue";
   fanArts!: FanArt[]
   constructor(private fanArtsService: FanArtsService) { }
@@ -20,6 +22,12 @@ export class CatalogPageComponent implements OnInit {
     this.fanArtsService.getAllFanArts().subscribe(
       data => {
         this.fanArts = data;
+        if(data.length > 0) {
+          this.areThereFanArts = true;
+        }else{
+          this.areThereFanArts = false;
+          
+        }
       },
       err => {
         console.log(err);
