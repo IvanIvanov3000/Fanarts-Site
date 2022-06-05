@@ -1,3 +1,4 @@
+@@ -0,0 +1,103 @@
 section#register {
     background-image: url("../../../assets/Images/login-register/login-hero.png");
     background-color: var(--primary-grey);
@@ -43,6 +44,12 @@ section#register #register-text div.wrapper {
 section#register #register-text div.wrapper form {
     width: 100%
 }
+section#register #register-text img {
+    width: 48%;
+    height: 36%
+
+
+}
 
 section#register #register-text input {
     width: 100%;
@@ -78,4 +85,20 @@ section#register #register-text h2 {
     color: var(--primary-orange);
     text-align: center;
     margin-bottom: 25px;
+}
+.alert.alert-success{
+    color : var(--primary-orange);
+    font-size: 30px;
+    text-align: center;
+    margin : 0 auto;
+
+    margin-top: 90px
+}
+.alert-danger div{
+    font-size: 20px;
+    color: var(--primary-alert);
+}
+.alert-danger{
+    font-size: 20px;
+    color: var(--primary-alert);
 }
