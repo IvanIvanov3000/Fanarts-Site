@@ -1,3 +1,4 @@
+@@ -0,0 +1,79 @@
 import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -14,15 +15,15 @@ import { FanArtsService } from '../_services/fan-arts.service';
 })
 export class DetailsEditPageComponent implements OnInit {
 
-  // form: any = {
-  //   title: null,
-  //   image: null,
-  //   gender: "Male",
-  //   tag: null,
-  //   description: null,
+  form: any = {
+    title: null,
+    image: null,
+    isPublic: null,
+    tag: null,
+    description: null,
 
-  // };
-  form$!: Observable<FanArt>;
+  };
+  //form!: Observable<FanArt>;
 
   isSuccessful = false;
   isCreateFailed = false;
@@ -36,35 +37,33 @@ export class DetailsEditPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.form$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) : Observable<FanArt> =>
-        this.fanArtsService.getFanArt(params.get('id')!))
-    );
-    console.log(this.form$);
-    // this.fanArtsService.getFanArt(id).subscribe(
-    //   data => {
-    //     this.form = Object.assign({}, data);
-    //     console.log(this.form);
-    //   },
-    //   err => {
-    //     console.log(err);
-    //   });
+    // this.form$ = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) : Observable<FanArt> =>
+    //     this.fanArtsService.getFanArt(params.get('id')!))
+    // );
+    // console.log(this.form$);
+    let id = this.route.snapshot.params['id'];
+    this.fanArtsService.getFanArt(id).subscribe(
+      data => {
+        this.form = Object.assign({}, data);
+        this.form.isPublic = this.form.isPublic == true ? "public" : "private";
+        console.log(this.form);
+      },
+      err => {
+        console.log(err);
+      });
   }
   onSubmit(): void {
-    // const { title, image, isPublic, tag, description } = this.form;
-    // console.log(title, image, isPublic, tag, description);
-    /*
-    this.fanArtsService.create(title, image, isPublic, tag, description)
+    let id = this.route.snapshot.params['id'];
+    let { title, image, isPublic, tag, description } = this.form;
+    isPublic = isPublic == "public" ? true : false;
+    this.fanArtsService.edit(id, title, image, isPublic, tag, description)
       .subscribe(
         data => {
           this.isSuccessful = true;
           setTimeout(() => {
-            this.router.navigate(['/catalog']);
+            this.router.navigate(['/details' + id]);
           }, 500);
-
-          setTimeout(() => {
-            this.reloadPage();
-          }, 2000);
         },
         err => {
           console.log(err);
@@ -73,7 +72,6 @@ export class DetailsEditPageComponent implements OnInit {
           this.errorMessage = err.error.message;
         }
       );
-      */
   }
   reloadPage(): void {
     window.location.reload();
