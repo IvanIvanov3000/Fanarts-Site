@@ -1,3 +1,4 @@
+@@ -0,0 +1,113 @@
 section#search {
     background-image: url("../../assets/Images/catalog-toparts-page/background2.png");
     background-color: var(--primary-grey);
@@ -88,4 +89,26 @@ section#search form button {
 
 section#search form button:hover {
     background-color: grey;
+}
+#nothingFound{
+    width: 30%;
+    height: 20%;
+
+    position: absolute;
+    top: 35%;
+    left: 35%;
+
+    border-top: 3px solid  var(--primary-blue);;
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 25px;
+    background: var(--primary-grey);
+    padding: 30px;
+}
+
+#nothingFound p{
+    font-size: 35px;
+    color: var(--primary-blue);
+    text-align: justify;
+
+    margin-top : 30px;
 }
