@@ -1,3 +1,4 @@
+@@ -0,0 +1,46 @@
 <section id="login">
     <div id="login-hero"></div>
 
@@ -10,8 +11,8 @@
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email minlength="5"
-                        #email="ngModel" />
+                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+                        minlength="5" #email="ngModel" />
                     <div class="alert-danger" *ngIf="email.errors && f.submitted">
                         <div *ngIf="email.errors['required']">Email is required</div>
                         <div *ngIf="email.errors['email']">
@@ -19,26 +20,22 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
-                        minlength="6" #password="ngModel" />
-                    <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                        #password="ngModel" />
+                    <div class="alert-danger" *ngIf="password.errors && f.submitted">
                         <div *ngIf="password.errors['required']">Password is required</div>
-                        <!-- <div *ngIf="password.errors['minlength']">
-                            Password must be at least 6 characters
-                        </div> -->
                     </div>
                 </div>
                 <div class="form-group">
                     <button class="btn">Login</button>
                 </div>
-                <div class="form-group">
-                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-                        Login failed: {{ errorMessage }}
-                    </div>
+
+                <div class="alert alert-danger" *ngIf="f.submitted && isLoginFailed">
+                    Login failed: {{ errorMessage }}
                 </div>
+
 
             </form>
             <div class="alert alert-success" *ngIf="isLoggedIn">
