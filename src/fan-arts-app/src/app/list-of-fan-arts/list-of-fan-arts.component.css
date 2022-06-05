@@ -5,7 +5,7 @@ section{
     gap: calc(4% / 3);
     align-items: top;
     padding: 15px 0px;
-    border-bottom: 10px solid var(--primary-grey);
+    /* border-bottom: 10px solid var(--primary-grey); */
 }
 
 app-fan-art{
