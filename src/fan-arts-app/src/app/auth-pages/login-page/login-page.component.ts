@@ -20,13 +20,16 @@ export class LoginPageComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
 
-
-
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, public router: Router) { }
 
   ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
+    const user = this.tokenStorage.getToken();
+    if (user) {
       this.isLoggedIn = true;
+    }
+    else{
+      this.isLoggedIn = false;
+
     }
   }
   onSubmit(): void {
@@ -59,5 +62,4 @@ export class LoginPageComponent implements OnInit {
   }
 
 }
-
 
