@@ -1,9 +1,10 @@
+@@ -0,0 +1,42 @@
 header {
     background-color: var(--primary-green);
 }
 
 header nav {
-    width: 90%;
+    width: 89.8%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -16,7 +17,7 @@ header img {
 }
 
 header ul {
-    width: 60%;
+    width: 66%;
     display: flex;
     justify-content: right;
     gap: 40px;
