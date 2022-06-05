@@ -97,3 +97,18 @@ section#profile-edit #profile-edit-text button {
 section#profile-edit #profile-edit-text button:hover {
     background-color: grey;
 }
+
+.alert.alert-success {
+    color: var(--primary-orange);
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+.alert-danger div{
+    font-size: 20px;
+    color: var(--primary-alert);
+}
+.alert-danger{
+    font-size: 20px;
+    color: var(--primary-alert);
+}
