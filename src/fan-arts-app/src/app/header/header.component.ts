@@ -1,3 +1,4 @@
+@@ -0,0 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -30,11 +31,11 @@ export class HeaderComponent implements OnInit {
     //   this.router.navigate(['/register']);
     // }, 1000);
 
-    // setTimeout(() => {
+    setTimeout(() => {
 
-    //   this.reloadPage();
-    // }, 3000)
-    return window.location.reload();
+      return window.location.reload();
+    }, 1000)
+    
 
   }
 
