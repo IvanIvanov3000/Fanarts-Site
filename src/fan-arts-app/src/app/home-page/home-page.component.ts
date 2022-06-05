@@ -1,3 +1,4 @@
+@@ -0,0 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FanArt } from '../fanArts';
