@@ -1,7 +1,9 @@
+@@ -0,0 +1,65 @@
 section#my-posts {
     background-image: url("../../assets/Images/catalog-toparts-page/background2.png");
     background-color: var(--primary-grey);
     width: 100%;
+    min-height: 1000px;
     position: relative;
     border-top: 10px solid var(--primary-grey);
     border-bottom: 10px solid var(--primary-grey);
@@ -30,7 +32,35 @@ section#my-posts h2 {
 
 }
 app-list-of-fan-arts{
-
     padding-top: 20px;
 }
+#noFanArtsMessage{
+    width: 30%;
+    height: 50%;
 
+    position: absolute;
+    top: 25%;
+    left: 35%;
+
+    border-top: 3px solid  var(--primary-orange);;
+    border-left: 3px solid var(--primary-orange);
+    border-radius: 25px;
+    background: var(--primary-grey);
+    padding: 30px;
+}
+#noFanArtsMessage p{
+    font-size: 35px;
+    color: var(--primary-orange);
+    text-align: justify;
+
+    margin-top : 30px;
+}
+#noFanArtsMessage img{
+    width: 80%;
+    margin : 0 10%;
+}
+#noFanArtsMessage p a{
+    font-size: 37px;
+    color: var(--primary-blue);
+    text-align: center;
+}
