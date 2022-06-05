@@ -40,6 +40,7 @@ section#login #login-text {
 section#login #login-text div.wrapper {
     width: 40%
 }
+
 section#login #login-text div.wrapper form {
     width: 100%
 }
@@ -61,6 +62,7 @@ section#login #login-text label {
     margin: 15px 0px;
     color: var(--primary-orange);
 }
+
 section#login #login-text button {
     width: 100%;
     font-size: 17px;
@@ -70,14 +72,31 @@ section#login #login-text button {
     cursor: pointer;
 
 }
+
 section#login #login-text button:hover {
     background-color: grey;
 }
-
 
 section#login #login-text h2 {
     font-size: 45px;
     color: var(--primary-orange);
     text-align: center;
     margin-bottom: 25px;
+}
+
+.alert.alert-success {
+    color: var(--primary-orange);
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.alert-danger div{
+    font-size: 20px;
+    color: var(--primary-alert);
+}
+.alert-danger{
+    font-size: 20px;
+    color: var(--primary-alert);
 }
