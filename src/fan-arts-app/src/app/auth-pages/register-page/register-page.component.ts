@@ -1,3 +1,4 @@
+@@ -0,0 +1,66 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -24,7 +25,16 @@ export class RegisterPageComponent implements OnInit {
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, public router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    const user = this.tokenStorage.getToken();
+    if (user) {
+      this.isSuccessful = true;
+    }
+    else{
+      this.isSuccessful = false;
+
+    }
+  }
   onSubmit(): void {
     const { username, email, password, repeatPassword } = this.form;
 
