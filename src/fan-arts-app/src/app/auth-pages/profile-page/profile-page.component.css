@@ -73,6 +73,10 @@ section#profile #profile-text button {
     cursor: pointer;
 
 }
+section#profile #profile-text span {
+    margin-left: 8px;
+
+}
 section#profile #profile-text button:hover {
     background-color: grey;
 }
