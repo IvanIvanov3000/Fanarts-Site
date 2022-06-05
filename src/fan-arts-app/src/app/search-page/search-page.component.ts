@@ -1,6 +1,9 @@
+@@ -0,0 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 
-import { example, FanArt } from '../fanArts';
+import { FanArt } from '../fanArts';
+import { FanArtsService } from '../_services/fan-arts.service';
+
 
 @Component({
   selector: 'app-search-page',
@@ -11,9 +14,36 @@ export class SearchPageComponent implements OnInit {
 
   theme = "blue"
   fanArts!: FanArt[];
-  constructor() { }
+  areThereFanArts!: boolean;
+
+  form: any = {
+    title: null,
+    tag: null,
+  };
+
+  constructor(private fanArtsService: FanArtsService) { }
 
   ngOnInit(): void {
   }
+  onSubmit(): void {
+    const { title, tag } = this.form;
+    console.log(title, tag);
+    this.fanArtsService.searchFanArt(title, tag)
+      .subscribe(
+        data => {
+          this.fanArts = data;
+          if (data.length > 0) {
+            this.areThereFanArts = true;
 
-}
+          } else {
+            this.areThereFanArts = false;
+          }
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  }
+
+
+} 
