@@ -1,3 +1,4 @@
+@@ -0,0 +1,105 @@
 section#details {
     background-image: url("../../assets/Images/catalog-toparts-page/background.png");
     background-color: var(--primary-grey);
@@ -42,6 +43,8 @@ section#details #details-text {
 
 section#details #details-text img {
     max-width: 46%;
+    min-width: 30%;
+
     height:  auto;
     object-fit: cover;
     border: 3px solid var(--primary-blue);
@@ -62,13 +65,13 @@ section#details #details-text div.wrapper div {
     margin: 15px 0;
 }
 section#details #details-text div.wrapper div p {
-    width: 19%;
+    width: 23%;
     text-align: right;
 }
 section#details #details-text div.wrapper div span {
     word-break: break-all;
 
-    width: 81%;
+    width: 77%;
     text-align: left;
 }
 section#details #details-text div.wrapper div p, section#details #details-text div.wrapper div span{
@@ -90,4 +93,14 @@ section#details #details-text div.wrapper div button {
 
 section#details #details-text div.wrapper div button:hover {
     background-color: grey;
+}
+section#details #details-text div.wrapper div#loginMessage p{
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 90px;
+}
+section#details #details-text div.wrapper div#loginMessage p a{
+   color: var(--primary-orange);
 }
