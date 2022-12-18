@@ -1,0 +1,62 @@
+section#catalog {
+    background-image: url("../../assets/Images/catalog-toparts-page/background2.png");
+    background-color: var(--primary-grey);
+    width: 100%;
+    min-height: 700px;
+    position: relative;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+
+}
+
+section#catalog div.catalog-bar {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: var(--primary-grey);
+    border-bottom: 5px solid var(--primary-blue);
+    border-top: 5px solid var(--primary-blue);
+}
+
+section#catalog div.title {
+    margin: 20px auto;
+    width: 300px;
+    border: 3px solid var(--primary-blue);
+}
+
+section#catalog h2 {
+    font-size: 60px;
+    margin: 5px 0;
+    color: var(--primary-blue);
+    text-align: center;
+
+}
+
+#nothingFound {
+    width: 30%;
+    height: 40%;
+
+    position: absolute;
+    top: 35%;
+    left: 35%;
+
+    border-top: 3px solid var(--primary-blue);
+    ;
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 25px;
+    background: var(--primary-grey);
+    padding: 30px;
+}
+
+#nothingFound p {
+    font-size: 35px;
+    color: var(--primary-blue);
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#nothingFound a {
+    font-size: 40px;
+    color: var(--primary-blue);
+    text-align: left;
+    margin: 0px 35%;
+}

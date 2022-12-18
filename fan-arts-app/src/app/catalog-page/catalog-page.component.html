@@ -1,0 +1,14 @@
+<section id="catalog">
+    <div class="catalog-bar">
+        <div class="title">
+            <h2>Catalog</h2>
+        </div>
+    </div>
+
+    <app-list-of-fan-arts [fanArts]="fanArts" [theme]="theme"></app-list-of-fan-arts>
+
+    <div id='nothingFound'*ngIf="!areThereFanArts">
+        <p>There are no fan arts published yet. Be the first person to publish a fan art. </p>
+        <a routerLink="/create">Create</a>
+    </div>
+</section>   

@@ -1,0 +1,42 @@
+header {
+    background-color: var(--primary-green);
+}
+
+header nav {
+    width: 89.8%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+header img {
+    height: 100px;
+    width: auto;
+}
+
+header ul {
+    width: 66%;
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    align-items: center;
+}
+
+header a {
+    font-size: 30px;
+
+}
+header button {
+    font-size: 29px;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px; 
+
+}
+header button:hover{
+    text-decoration: underline; 
+    cursor: pointer;
+ 
+}

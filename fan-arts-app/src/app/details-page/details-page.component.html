@@ -1,0 +1,57 @@
+<section id="details">
+    <div id="details-hero" *ngIf="fanArt"></div>
+
+    <div id="details-text">
+        <img src={{fanArt.image}} alt="A fan art image">
+
+        <div class="wrapper">
+            <div>
+                <p>Title:</p>
+                <span>{{fanArt.title}}</span>
+            </div>
+            <div>
+                <p>Tag:</p>
+                <span>{{fanArt.tag}}</span>
+            </div>
+            <div>
+                <p>Public:</p>
+                <span *ngIf="fanArt.isPublic">Yes</span>
+                <span *ngIf="!fanArt.isPublic">No</span>
+
+            </div>
+            <div>
+                <p>Author:</p>
+                <span>{{fanArt.author.username}}</span>
+            </div>
+            <div>
+                <p>Likes:</p>
+                <span>{{fanArt.likes.length}}</span>
+            </div>
+            <div>
+                <p>Description:</p>
+                <span>{{fanArt.description}}</span>
+            </div>
+        
+            <div class="buttons" *ngIf="isOwner && loggedIn">
+                <button lass="edit" [routerLink]="['/details', fanArt._id, 'edit']">Edit</button>
+                <button class="delete" (click)="onDelete()">Delete</button>
+            </div>
+            <div class="buttons" *ngIf="!isOwner && loggedIn">
+                <button class="like" (click)="onLike()" [disabled]="isLiked">Like</button>
+                <button class="dislike" (click)="onDislike()" [disabled]="!isLiked">Dislike</button>
+            </div>
+            <div class="buttons" id="loginMessage" *ngIf="!loggedIn">
+                <p>You can like and dislike this content if you are logged in. Just <a
+                        [routerLink]="['/login']">login</a>.
+                </p>
+            </div>
+            <div *ngIf="loggedIn && errorMessage">Error : {{errorMessage}}</div>
+        </div>
+
+
+
+
+    </div>
+
+
+</section>

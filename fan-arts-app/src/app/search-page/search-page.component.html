@@ -1,0 +1,32 @@
+<section id="search">
+    <div class="search-bar">
+
+        <div class="title">
+            <h2>Search</h2>
+        </div>
+
+        <section id="tags">
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit() " #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" class="form-control" name="title" [(ngModel)]="form.title" #title="ngModel" />
+
+                </div>
+                <div class="form-group">
+                    <label for="tag">Tag :</label>
+                    <input type="text" class="form-control" name="tag" [(ngModel)]="form.tag" #tag="ngModel" />
+
+                </div>
+                <button>Search</button>
+            </form>
+        </section>
+
+    </div>
+
+    <div *ngIf="areThereFanArts">
+        <app-list-of-fan-arts [fanArts]="fanArts" [theme]="theme"></app-list-of-fan-arts>
+    </div>
+    <div id='nothingFound'*ngIf="!areThereFanArts && f.submitted" >
+        <p>There ins't a fan art with this title and tag.</p>
+    </div>
+</section>

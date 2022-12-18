@@ -1,0 +1,5 @@
+main {
+    width: 90%;
+    margin: 0 5%;
+    min-height: calc(100vh - 230px);
+}

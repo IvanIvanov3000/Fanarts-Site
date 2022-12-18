@@ -1,0 +1,16 @@
+<article class={{theme}}>
+    <div class="tag">{{fanArt.tag}}</div>
+    <div class="likes">{{fanArt.likes.length}}</div>
+
+
+    <img src="{{fanArt.image}}" alt="">
+    
+    <div class="wrapper">
+        <h3>{{fanArt.title}}</h3>
+        <p class="description">
+            
+            {{ (fanArt.description.length>100)? (fanArt.description | slice:0:100)+'...':(fanArt.description) }}
+        </p>
+        <button class="toDetailsPage" [routerLink]="['/details', fanArt._id]">Details</button>
+    </div>
+</article>

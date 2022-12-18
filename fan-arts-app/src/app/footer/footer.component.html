@@ -1,0 +1,33 @@
+<footer>
+    <nav class="internalLinks">
+        <ul *ngIf="loggedIn()">
+            <li><a class="aboutLink" [routerLink]="['/']">Home</a></li>
+            <li><a class="aboutLink" [routerLink]="['/about']">About</a></li>
+            <li><a class="catalogLink" [routerLink]="['/catalog']">Catalog</a></li>
+            <li><a class="catalogLink" [routerLink]="['/search']">Search</a></li>
+
+            <li><a class="catalogLink" [routerLink]="['/create']">Create</a></li>
+            <li><button class="registerLinks" (click)="onLogout()">Logout</button></li>
+
+        </ul>
+        <ul *ngIf="!loggedIn()">
+            <li><a class="aboutLink" [routerLink]="['/']">Home</a></li>
+            <li><a class="aboutLink" [routerLink]="['/about']">About</a></li>
+            <li><a class="catalogLink" [routerLink]="['/catalog']">Catalog</a></li>
+            <li><a class="catalogLink" [routerLink]="['/search']">Search</a></li>
+
+
+            <li><a class="registerLinks" [routerLink]="['/login']">Login</a></li>
+            <li><a class="registerLinks" [routerLink]="['/register']">Register</a></li>
+
+        </ul>
+    </nav>
+    <img src="./assets/Images/footer.png" alt="">
+    <nav class="externalLinks">
+        <ul>
+            <li><a class="aboutLink" href="https://www.facebook.com/">Facebook</a></li>
+            <li><a class="catalogLink" href="https://www.instagram.com/">Instagram</a></li>
+            <li><a class="registerLinks" href="https://twitter.com/">Twiter</a></li>
+        </ul>
+    </nav>
+</footer>
