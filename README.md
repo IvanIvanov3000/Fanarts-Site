@@ -34,4 +34,5 @@ Install the npm modules in both folders by running the command 'npm i';
 Then for the server type the command 'npm start' and for the angular folder type the command 'ng serve'. If an error occurs open the app folder and run the command there.
 This hole process may take a few seconds or even a minute, so please wait a bit if it isn't starting the second you type these commands.
 Then you will be able to access the application.
+The server will create a folder called fan-arts in your Mongo DB. 
   
