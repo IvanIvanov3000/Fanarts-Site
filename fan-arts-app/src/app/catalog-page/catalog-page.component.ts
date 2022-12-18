@@ -20,6 +20,8 @@ export class CatalogPageComponent implements OnInit {
    ngOnInit(): void {
     this.fanArtsService.getAllFanArts().subscribe(
       data => {
+        data.sort((a: any, b : any) => a.likes.length - b.likes.length);
+        data.reverse();
         this.fanArts = data;
         if(data.length > 0) {
           this.areThereFanArts = true;

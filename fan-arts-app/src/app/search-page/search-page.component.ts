@@ -30,6 +30,8 @@ export class SearchPageComponent implements OnInit {
     this.fanArtsService.searchFanArt(title, tag)
       .subscribe(
         data => {
+        data.sort((a: any, b : any) => a.likes.length - b.likes.length);
+        data.reverse();
           console.log(data);
           this.fanArts = data;
           if (data.length > 0) {
