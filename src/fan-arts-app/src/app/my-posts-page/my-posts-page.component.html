@@ -1,0 +1,15 @@
+@@ -0,0 +1,14 @@
+<section id="my-posts">
+    <div class="my-posts-bar">
+
+        <div class="title">
+            <h2>My posts</h2>
+        </div>
+    </div>
+
+    <app-list-of-fan-arts *ngIf="areThereFanArts" [fanArts]="fanArts" [theme]="theme"></app-list-of-fan-arts>
+    <div id="noFanArtsMessage" *ngIf="!areThereFanArts">
+        <img src="./assets/Images/login-register/fire-logo-grey.png" alt="">
+        <p>You haven't posted a fan art yet. Why dont't you <a routerLink="/create">create</a> one?</p>
+    </div>
+</section>

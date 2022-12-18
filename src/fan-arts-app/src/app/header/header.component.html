@@ -1,0 +1,33 @@
+@@ -0,0 +1,32 @@
+<header>
+    <nav>
+        <a [routerLink]="['/']">
+            <img src="../../assets/Images/logo.png" alt="Fanart Img">
+
+        </a>
+
+        <ul *ngIf="isLoggedIn">
+            <li><a class="aboutLink" [routerLink]="['/']">Home</a></li>
+            <li><a class="aboutLink" [routerLink]="['/about']">About</a></li>
+            <li><a class="catalogLink" [routerLink]="['/catalog']">Catalog</a></li>
+            <li><a class="catalogLink" [routerLink]="['/search']">Search</a></li>
+
+            <li><a class="catalogLink" [routerLink]="['/create']">Create</a></li>
+            <li><a class="registerLinks" [routerLink]="['/profile']">Profile</a></li>
+            <li><a class="registerLinks" [routerLink]="['/myposts']">My posts</a></li>
+            <li><button class="registerLinks" (click)="onLogout()">Logout</button></li>
+
+        </ul>
+        <ul *ngIf="!isLoggedIn">
+            <li><a class="aboutLink" [routerLink]="['/']">Home</a></li>
+            <li><a class="aboutLink" [routerLink]="['/about']">About</a></li>
+            <li><a class="catalogLink" [routerLink]="['/catalog']">Catalog</a></li>
+            <li><a class="catalogLink" [routerLink]="['/search']">Search</a></li>
+
+
+            <li><a class="registerLinks" [routerLink]="['/login']">Login</a></li>
+            <li><a class="registerLinks" [routerLink]="['/register']">Register</a></li>
+
+        </ul>
+    </nav>
+</header>

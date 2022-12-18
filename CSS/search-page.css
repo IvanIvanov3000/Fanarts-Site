@@ -1,0 +1,183 @@
+section#search {
+    background-image: url("../Images/catalog-toparts-page/background2.png");
+    background-color: var(--primary-grey);
+    width: 100%;
+    min-height: 1000px;
+    position: relative;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+
+}
+
+section#search div.search-bar {
+    margin-top: 2%;
+    padding-top: 20px;
+    background-color: var(--primary-grey);
+    border-bottom: 5px solid var(--primary-blue);
+    border-top: 5px solid var(--primary-blue);
+}
+
+section#search div.title {
+    /* position: absolute;
+    top: 5px;
+    right:  706.5px; */
+    margin: 0 auto;
+    width: 300px;
+    height: 78px;
+    border: 3px solid var(--primary-blue);
+}
+
+section#search h2 {
+    font-size: 60px;
+    margin: 5px 0;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+section#search section#tags {
+    width: 100%;
+    background-color: var(--primary-grey);
+}
+
+section#search section#tags form {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+section#search form div {
+    display: flex;
+    width: 32%;
+    border-right: 5px solid var(--primary-blue);
+    gap: 3%;
+    padding-right:  15px
+}
+
+section#search form input {
+    width: 88%;
+    font-size: 16px;
+    color: var(--primary-blue);
+    padding: 3px 10px;
+    box-sizing: border-box;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 25px;
+}
+
+section#search form label {
+    width: 12%;
+    font-size: 23px;
+    margin: 15px 0px;
+    color: var(--primary-blue);
+    text-align: right;
+}
+
+section#search form button {
+    width: 33%;
+    font-size: 23px;
+    border-radius: 25px;
+    border: none;
+    margin: 5px 0px;
+    color: var(--primary-blue);
+    cursor: pointer;
+}
+
+section#search form button:hover {
+    background-color: grey;
+}
+
+/* cards */
+
+section#search section#cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+   
+    justify-content: space-between;
+    align-items: top;
+    border-top: none;
+    margin-top: 4%;
+    padding-top: 20px;
+
+
+    
+}
+
+section#search section#cards article {
+    width: 31%;
+    background-color: var(--primary-grey);
+    position: relative;
+    border-top: 3px solid var(--primary-blue);
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 25px;
+    margin: 15px 5px;
+    overflow: hidden;
+
+}
+
+section#cards article img {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+section#cards article div.tag {
+    display: inline;
+    padding: 2px 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    top: 6px;
+    right:  13px;
+
+    background-color: var(--primary-grey);
+    font-size: 19px;
+   
+}
+
+
+section#cards article .wrapper {
+
+    margin: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-self: bottom;
+}
+
+section#cards article .wrapper h3 {
+    font-size: 25px;
+    text-align: center;
+    color: var(--primary-orange)
+}
+
+section#cards article .wrapper p {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--primary-yellow)
+}
+
+section#cards article .wrapper button.toDetailsPage {
+    display: block;
+
+    margin: 15px 0;
+    padding: 5px 10px;
+    background-color: var(--primary-grey);
+    border: 3px solid black;
+    border-radius: 17px;
+
+    font-size: 20px;
+    text-align: justify;
+    color: var(--primary-blue)
+}
+
+section#cards article .wrapper button.toDetailsPage:hover {
+    background-color: grey;
+}

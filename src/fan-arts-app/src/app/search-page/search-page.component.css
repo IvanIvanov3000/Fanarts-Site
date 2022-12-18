@@ -1,0 +1,114 @@
+@@ -0,0 +1,113 @@
+section#search {
+    background-image: url("../../assets/Images/catalog-toparts-page/background2.png");
+    background-color: var(--primary-grey);
+    width: 100%;
+    min-height: 1000px;
+    position: relative;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+
+}
+
+section#search div.search-bar {
+    margin-top: 2%;
+    padding-top: 20px;
+    background-color: var(--primary-grey);
+    border-bottom: 5px solid var(--primary-blue);
+    border-top: 5px solid var(--primary-blue);
+}
+
+section#search div.title {
+    /* position: absolute;
+    top: 5px;
+    right:  706.5px; */
+    margin: 0 auto;
+    width: 300px;
+    height: 78px;
+    border: 3px solid var(--primary-blue);
+}
+
+section#search h2 {
+    font-size: 60px;
+    margin: 5px 0;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+section#search section#tags {
+    width: 100%;
+    background-color: var(--primary-grey);
+}
+
+section#search section#tags form {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+section#search form div {
+    display: flex;
+    width: 32%;
+    border-right: 5px solid var(--primary-blue);
+    gap: 3%;
+    padding-right:  15px
+}
+
+section#search form input {
+    width: 88%;
+    font-size: 16px;
+    color: var(--primary-blue);
+    padding: 3px 10px;
+    box-sizing: border-box;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 25px;
+}
+
+section#search form label {
+    width: 12%;
+    font-size: 23px;
+    margin: 15px 0px;
+    color: var(--primary-blue);
+    text-align: right;
+}
+
+section#search form button {
+    width: 33%;
+    font-size: 23px;
+    border-radius: 25px;
+    border: none;
+    margin: 5px 0px;
+    color: var(--primary-blue);
+    cursor: pointer;
+}
+
+section#search form button:hover {
+    background-color: grey;
+}
+#nothingFound{
+    width: 30%;
+    height: 20%;
+
+    position: absolute;
+    top: 35%;
+    left: 35%;
+
+    border-top: 3px solid  var(--primary-blue);;
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 25px;
+    background: var(--primary-grey);
+    padding: 30px;
+}
+
+#nothingFound p{
+    font-size: 35px;
+    color: var(--primary-blue);
+    text-align: justify;
+
+    margin-top : 30px;
+}

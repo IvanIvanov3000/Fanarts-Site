@@ -1,0 +1,28 @@
+<div class="container" *ngIf="currentUser; else loggedOut"></div>
+<section id="profile">
+    <div id="profile-hero"></div>
+
+    <div id="profile-text">
+        <img src="./assets/Images/login-register/fire-logo-grey.png" alt="">
+        <h2>Profile</h2>
+
+        <div>
+            <div>
+                <p>Username: </p>
+                <span class="username"> {{ currentUser.username }}</span>
+            </div>
+            <div>
+                <p>Email: </p>
+                <span class="email"> {{ currentUser.email }}</span>
+            </div>
+            <div>
+                <p>Number of posts: </p>
+                <span class="postsCount">  {{ currentUser.fanArts }}</span>
+            </div>
+            <button routerLink="/profile/edit">Edit</button>
+        </div>
+    </div>
+</section>
+<ng-template #loggedOut>
+    Please login.
+</ng-template>

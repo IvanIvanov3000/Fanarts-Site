@@ -1,0 +1,46 @@
+<section id="login">
+    <div id="login-hero"></div>
+
+    <div id="login-text">
+        <img src="./assets/Images/login-register/fire-logo-grey.png" alt="">
+        <div class="wrapper">
+            <h2>Login page</h2>
+            <form method="post" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+                novalidate>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+                        minlength="5" #email="ngModel" />
+                    <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                        <div *ngIf="email.errors['required']">Email is required</div>
+                        <div *ngIf="email.errors['email']">
+                            Email must be a valid email address
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+                        #password="ngModel" />
+                    <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                        <div *ngIf="password.errors['required']">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn">Login</button>
+                </div>
+
+                <div class="alert alert-danger" *ngIf="f.submitted && isLoginFailed">
+                    Login failed: {{ errorMessage }}
+                </div>
+
+
+            </form>
+            <div class="alert alert-success" *ngIf="isLoggedIn">
+                Login is successful.
+            </div>
+        </div>
+
+    </div>
+</section>

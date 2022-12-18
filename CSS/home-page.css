@@ -1,0 +1,285 @@
+body {
+    background-color: var(--primary-green);
+    cursor: default;
+}
+
+body a:hover {
+    text-decoration: underline;
+}
+
+.registerLinks {
+    color: var(--primary-orange);
+}
+
+.catalogLink {
+    color: var(--primary-blue);
+}
+
+.aboutLink {
+    color: var(--primary-yellow);
+}
+.tag{
+    color: var(--primary-blue)
+}
+.tag.new{
+    color: var(--primary-yellow)
+}
+.tag.popular{
+    color: var(--primary-orange)
+}
+/* header */
+
+header {
+    background-color: var(--primary-green);
+}
+
+header nav {
+    width: 88%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+header img {
+    height: 100px
+}
+
+header ul {
+    width: 90%;
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    align-items: center;
+}
+
+header a {
+    font-size: 30px;
+
+}
+
+
+/* main */
+main {
+    width: 90%;
+    margin: 0 5%;
+}
+/* main  h2 */
+main .latestArticlesh2 {
+    font-size: 38px;
+    text-align: center;
+    margin: 8px 0px;
+    color: var(--primary-grey)
+}
+
+
+/* section hero */
+#hero {
+    background-image: url("../Images/hero.jpeg");
+    width: 100%;
+    height: 770px;
+    position: relative;
+    color: #fff;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+}
+
+#hero-background {
+    width: 100%;
+    height: 750px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+#hero div#text {
+    position: absolute;
+    z-index: 3;
+    top: 30%;
+    left: 10%;
+    width: 45%;
+    /* height: 40%; */
+    gap: 25px;
+    background-color: var(--primary-grey);
+    padding: 20px;
+
+    border-top: 3px solid var(--primary-yellow);
+    border-left: 3px solid var(--primary-yellow);
+    border-radius: 25px;
+    margin: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+}
+
+#hero #text h1 {
+    font-size: 50px;
+    color: var(--primary-yellow);
+}
+
+#hero #text h3 {
+    font-size: 28px;
+    color: var(--primary-yellow);
+    width: 100%;
+
+}
+
+#hero #text h3 a {
+    color: var(--primary-orange);
+
+}
+
+#hero #text p {
+    color: var(--primary-yellow);
+
+}
+
+#hero #text p a {
+    color: var(--primary-blue);
+
+}
+
+
+
+
+/* section with articles */
+section#last-fan-arts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    border-top: 10px solid var(--primary-grey);
+    padding: 15px 0px;
+    border-bottom: 10px solid var(--primary-grey);
+    
+}
+
+section#last-fan-arts article {
+    width: 31%;
+    background-color: var(--primary-grey);
+    position: relative;
+    border-top: 3px solid var(--primary-yellow);
+    border-left: 3px solid var(--primary-yellow);
+    border-radius: 25px;
+    margin: 5px;
+    overflow: hidden;
+
+}
+
+section#last-fan-arts article img {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+section#last-fan-arts article div.tag {
+    display: inline;
+    padding: 2px 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    top: 6px;
+    right:  13px;
+
+    background-color: var(--primary-grey);
+    font-size: 19px;
+   
+}
+
+
+section#last-fan-arts article .wrapper {
+
+    margin: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-self: bottom;
+}
+
+section#last-fan-arts article .wrapper h3 {
+    font-size: 25px;
+    text-align: center;
+    color: var(--primary-orange)
+}
+
+section#last-fan-arts article .wrapper p {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--primary-yellow)
+}
+
+section#last-fan-arts article .wrapper button.toDetailsPage {
+    display: block;
+
+    margin: 15px 0;
+    padding: 5px 10px;
+    background-color: var(--primary-grey);
+    border: 3px solid black;
+    border-radius: 17px;
+
+    font-size: 20px;
+    text-align: justify;
+    color: var(--primary-blue)
+}
+
+section#last-fan-arts article .wrapper button.toDetailsPage:hover {
+    background-color: grey;
+}
+
+/* footer */
+
+footer {
+    width: 90%;
+    height: 100px;
+    margin: 20px 5%;
+    background-color: var(--primary-grey);
+
+    display: flex;
+    justify-content: space-between;
+
+    
+    bottom: 0;
+}
+
+footer nav {
+    display: flex;
+}
+
+footer nav.internalLinks {
+    width: 70%
+}
+
+footer nav.externalLinks {
+    width: 20%;
+    flex-wrap: wrap;
+}
+
+
+footer nav.internalLinks ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+}
+
+footer nav.externalLinks ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: space-around;
+}
+footer nav.externalLinks a{
+    font-size: 20px
+}
+
+footer a {
+    font-size: 25px;
+}

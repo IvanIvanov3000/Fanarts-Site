@@ -1,0 +1,147 @@
+section#details-edit {
+    background-image: url("../Images/catalog-toparts-page/background.png");
+    background-color: var(--primary-grey);
+    width: 100%;
+    height: 1080px;
+    position: relative;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+
+}
+
+section#details-edit #details-edit-hero {
+    width: 100%;
+    height: 1060px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+
+}
+
+section#details-edit #details-edit-text {
+    position: absolute;
+    top: 5%;
+    right: 25%;
+    width: 50%;
+    height: 85%;
+    padding: 30px 20px;
+
+    border-top: 3px solid var(--primary-blue);
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 25px;
+
+    background-color: var(--primary-grey);
+
+    display: flex;
+
+    flex-direction: column;
+    gap: 30px;
+}
+
+section#details-edit #details-edit-text img {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+section#details-edit #details-edit-text h2 {
+    font-size: 45px;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+section#details-edit #details-edit-text div.wrapper form {
+    width: 70%;
+    margin: 15px auto;
+}
+
+section#details-edit #details-edit-text div.wrapper form div {
+    display: flex;
+    gap: 4%;
+    
+}
+section#details-edit #details-edit-text div.wrapper form div.wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 62%;
+}
+
+section#details-edit #details-edit-text div.wrapper form div.wrapper span {
+    width: 36%;
+    vertical-align: middle;
+    align-self: center;
+}
+
+section#details-edit #details-edit-text div.wrapper form div.wrapper input {
+    width: 18px;
+    height: 18px;
+}
+
+section#details-edit #details-edit-text input {
+    width: 62%;
+    font-size: 18px;
+    color: var(--primary-blue);
+    padding: 3px 10px;
+    box-sizing: border-box;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 25px;
+
+}
+
+section#details-edit #details-edit-text select {
+    width: 64%;
+    font-size: 18px;
+    color: var(--primary-blue);
+    padding: 1px 10px;
+    box-sizing: border-box;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 25px;
+
+}
+section#details-edit #details-edit-text textarea {
+    width: 64%;
+    height: 150px;
+    max-width: 64%;
+    max-height: 200px;
+    min-width: 60%;
+    min-height: 100px;
+    font-size: 18px;
+    color: var(--primary-blue);
+    padding: 1px 10px;
+    box-sizing: border-box;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 25px;
+
+}
+
+section#details-edit #details-edit-text option {
+    font-size: 16px;
+}
+
+section#details-edit #details-edit-text label {
+    width: 35%;
+    font-size: 26px;
+    margin: 15px 0px;
+    color: var(--primary-blue);
+    text-align: right;
+    align-self: center;
+}
+
+
+section#details-edit #details-edit-text button {
+    width: 100%;
+    font-size: 25px;
+    border-radius: 25px;
+    margin-top: 18px;
+    color: var(--primary-blue);
+    cursor: pointer;
+}
+section#details-edit #details-edit-text button:hover {
+    background-color: grey;
+}

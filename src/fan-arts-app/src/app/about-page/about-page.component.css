@@ -1,0 +1,92 @@
+section#description{
+    background-image: url("../../assets/Images/about-page/electric.png");
+    background-color: var(--primary-grey);
+    width: 100%;
+    min-height: 700px;
+    position: relative;
+    border-top: 10px solid var(--primary-grey);
+    border-bottom: 10px solid var(--primary-grey);
+
+}
+
+section#description #description-hero{
+    width: 100%;
+    height: 680px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 0.5;
+
+}
+
+section#description #description-text{
+    position: absolute;
+    top: 20%;
+    right: 30%;
+    width: 40%;
+    padding: 30px 20px;
+
+    border-top: 3px solid var(--primary-yellow);
+    border-left: 3px solid var(--primary-yellow);
+    border-radius: 25px;
+
+    background-color: var(--primary-grey);
+}
+
+section#description #description-text h2{
+    font-size:  45px;
+    color: var(--primary-yellow);
+    text-align: center;
+}
+
+section#description #description-text p{
+    margin-top: 40px;
+    font-size:  18px;
+    color: var(--primary-yellow);
+    text-align: justify;
+
+}
+section#description #description-text div{
+position : absolute;
+top: -10%;
+right: -10%;
+background-color: transparent;
+}
+
+section#description #description-text img{
+    width: 150px;
+    height: auto;
+
+}
+section#description #description-text audio{
+display: none;
+
+}
+section#description #description-text a {
+    color: var(--primary-orange);
+
+}
+section#description #description-text a.blue {
+    color: var(--primary-blue);
+
+}
+
+.shakeit:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 4;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
