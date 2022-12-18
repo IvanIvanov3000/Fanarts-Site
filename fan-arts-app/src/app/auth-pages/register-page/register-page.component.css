@@ -68,7 +68,7 @@ section#register #register-text label {
     color: var(--primary-orange);
 }
 section#register #register-text button {
-    width: 30%;
+    width: 100%;
     font-size: 17px;
     border-radius: 25px;
     margin-top: 10px;
