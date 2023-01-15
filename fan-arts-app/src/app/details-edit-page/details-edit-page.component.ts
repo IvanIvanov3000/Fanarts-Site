@@ -1,6 +1,8 @@
 import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { TokenStorageService } from '../_services/token-storage.service';
+
 import { Observable } from 'rxjs';
 
 
@@ -31,7 +33,8 @@ export class DetailsEditPageComponent implements OnInit {
   constructor(
     private fanArtsService: FanArtsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private tokenStorageService : TokenStorageService
   ) { }
 
   ngOnInit(): void {
@@ -42,9 +45,15 @@ export class DetailsEditPageComponent implements OnInit {
     // );
     // console.log(this.form$);
     let id = this.route.snapshot.params['id'];
+    const user = this.tokenStorageService.getUser();
+    
     this.fanArtsService.getFanArt(id).subscribe(
       data => {
         this.form = Object.assign({}, data);
+        if( this.form.author._id !== user.id ){
+          this.router.navigate(['/details/' + id]);
+
+        }
         this.form.isPublic = this.form.isPublic == true ? "public" : "private";
         console.log(this.form);
       },

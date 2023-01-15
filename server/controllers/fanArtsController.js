@@ -16,7 +16,7 @@ function getFanArt(req, res, next) {
 }
 function searchFanArt(req, res, next) {
     const { title, tag } = req.body;
-    const searchBy = {};
+    const searchBy = {isPublic: true };
     if (title?.length > 0) {
         searchBy.title = title
     }
